@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR TRENCHES - Battle Together</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <span class="logo-icon">⚔️</span>
+                <span class="logo-text">OUR TRENCHES</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#discover">Discover</a></li>
+                <li><a href="#modes">Game Modes</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#shop">Shop <span class="dropdown-arrow">▼</span></a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#compete">Competitive <span class="dropdown-arrow">▼</span></a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search...">
+            </div>
+            <button class="btn-signin">Sign In</button>
+            <button class="btn-download">Download</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="hero-slide active" id="slide1">
+            <div class="hero-content">
+                <div class="hero-badge">SEASON 12</div>
+                <h1 class="hero-title">TRENCH<br>WARFARE</h1>
+                <p class="hero-tagline">HOLD THE LINE. TAKE THE VICTORY.</p>
+                <p class="hero-desc">Drop into the trenches with your squad. New weapons, new maps, and intense 50v50 battles await. Will you survive the storm?</p>
+                <button class="btn-play">PLAY NOW</button>
+            </div>
+            <div class="hero-image">
+                <div class="hero-character"></div>
+            </div>
+        </div>
+        <div class="hero-slide" id="slide2">
+            <div class="hero-content">
+                <div class="hero-badge">NEW MODE</div>
+                <h1 class="hero-title">CAPTURE<br>THE FLAG</h1>
+                <p class="hero-tagline">STRATEGY MEETS CHAOS</p>
+                <p class="hero-desc">Lead your team across enemy lines. Grab their flag and make it back alive. 4v4 tactical action at its finest.</p>
+                <button class="btn-play">PLAY NOW</button>
+            </div>
+        </div>
+        <div class="hero-slide" id="slide3">
+            <div class="hero-content">
+                <div class="hero-badge">LIVE EVENT</div>
+                <h1 class="hero-title">THE FINAL<br>PUSH</h1>
+                <p class="hero-tagline">JANUARY 31ST • 8PM EST</p>
+                <p class="hero-desc">Witness the biggest in-game event of the year. The battlefield will never be the same. Don't miss it.</p>
+                <button class="btn-play">SET REMINDER</button>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <button class="hero-dot active" data-slide="0"></button>
+            <button class="hero-dot" data-slide="1"></button>
+            <button class="hero-dot" data-slide="2"></button>
+            <button class="hero-pause">⏸</button>
+        </div>
+    </section>
+
+    <!-- Game Modes Section -->
+    <section class="modes" id="modes">
+        <h2 class="section-title">BATTLE MODES</h2>
+        <div class="modes-grid">
+            <div class="mode-card featured">
+                <div class="mode-image mode-battle-royale"></div>
+                <div class="mode-badge">🔥 HOT</div>
+                <div class="mode-info">
+                    <h3>BATTLE ROYALE</h3>
+                    <p>100 players. One winner.</p>
+                    <span class="player-count">🎮 156.2K playing</span>
+                </div>
+            </div>
+            <div class="mode-card">
+                <div class="mode-image mode-team-deathmatch"></div>
+                <div class="mode-info">
+                    <h3>TEAM DEATHMATCH</h3>
+                    <p>Classic 8v8 combat</p>
+                    <span class="player-count">🎮 89.4K playing</span>
+                </div>
+            </div>
+            <div class="mode-card">
+                <div class="mode-image mode-zero-build"></div>
+                <div class="mode-badge">NEW</div>
+                <div class="mode-info">
+                    <h3>ZERO BUILD</h3>
+                    <p>Pure gunplay action</p>
+                    <span class="player-count">🎮 234.1K playing</span>
+                </div>
+            </div>
+            <div class="mode-card">
+                <div class="mode-image mode-creative"></div>
+                <div class="mode-info">
+                    <h3>CREATIVE</h3>
+                    <p>Build your own world</p>
+                    <span class="player-count">🎮 67.8K playing</span>
+                </div>
+            </div>
+            <div class="mode-card">
+                <div class="mode-image mode-ranked"></div>
+                <div class="mode-badge">⚡ COMPETITIVE</div>
+                <div class="mode-info">
+                    <h3>RANKED</h3>
+                    <p>Prove your skill</p>
+                    <span class="player-count">🎮 45.3K playing</span>
+                </div>
+            </div>
+            <div class="mode-card">
+                <div class="mode-image mode-party"></div>
+                <div class="mode-info">
+                    <h3>PARTY ROYALE</h3>
+                    <p>No weapons, just vibes</p>
+                    <span class="player-count">🎮 23.9K playing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="news">
+        <h2 class="section-title">LATEST NEWS</h2>
+        <div class="news-grid">
+            <article class="news-card main">
+                <div class="news-image news-update"></div>
+                <div class="news-content">
+                    <span class="news-tag">UPDATE</span>
+                    <h3>Patch v12.40 Notes</h3>
+                    <p>New weapons, balance changes, and the return of a classic POI. Read the full patch notes.</p>
+                    <span class="news-date">January 31, 2026</span>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-image news-esports"></div>
+                <div class="news-content">
+                    <span class="news-tag">ESPORTS</span>
+                    <h3>Trenches Championship Series</h3>
+                    <p>$10M prize pool. Sign up now.</p>
+                    <span class="news-date">January 30, 2026</span>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-image news-collab"></div>
+                <div class="news-content">
+                    <span class="news-tag">COLLAB</span>
+                    <h3>Iconic Crossover Coming</h3>
+                    <p>A legendary collaboration drops next week.</p>
+                    <span class="news-date">January 29, 2026</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">350M+</span>
+                <span class="stat-label">REGISTERED PLAYERS</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15M</span>
+                <span class="stat-label">DAILY ACTIVE</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$50M</span>
+                <span class="stat-label">PRIZE POOLS</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">LIVE SERVERS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>READY TO DROP IN?</h2>
+            <p>Join millions of players in the trenches. Free to play on all platforms.</p>
+            <div class="cta-buttons">
+                <button class="btn-download-large">
+                    <span class="download-icon">⬇️</span>
+                    DOWNLOAD NOW
+                </button>
+                <div class="platforms">
+                    <span>Available on:</span>
+                    <span class="platform-icons">🎮 💻 📱</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>GAME</h4>
+                <ul>
+                    <li><a href="#">Battle Pass</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMMUNITY</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>ESPORTS</h4>
+                <ul>
+                    <li><a href="#">Tournaments</a></li>
+                    <li><a href="#">Leaderboards</a></li>
+                    <li><a href="#">Rules</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">⚔️ OUR TRENCHES</div>
+            <p>© 2026 Our Trenches. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
