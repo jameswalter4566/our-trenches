@@ -1,78 +1,154 @@
-// Our Trenches - Interactive Features
+// Our Trenches - Item Shop Interactive Features
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Back to top button
-    const backToTop = document.querySelector('.back-to-top');
-    if (backToTop) {
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Section Navigation Dots
+    const sections = document.querySelectorAll('.shop-section');
+    const navDots = document.querySelectorAll('.nav-dot');
+    
+    // Update active dot based on scroll position
+    const updateActiveDot = () => {
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+        
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                navDots.forEach(dot => dot.classList.remove('active'));
+                if (navDots[index]) {
+                    navDots[index].classList.add('active');
+                }
+            }
         });
-    }
-
-    // Carousel dots
-    const dots = document.querySelectorAll('.carousel-dot');
-    dots.forEach((dot, index) => {
+    };
+    
+    window.addEventListener('scroll', updateActiveDot);
+    
+    // Click on nav dots to scroll to section
+    navDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            dots.forEach(d => d.classList.remove('active'));
-            dot.classList.add('active');
+            if (sections[index]) {
+                sections[index].scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
-    // Pause button toggle
-    const pauseBtn = document.querySelector('.carousel-pause');
-    let isPaused = false;
-    if (pauseBtn) {
-        pauseBtn.addEventListener('click', () => {
-            isPaused = !isPaused;
-            pauseBtn.innerHTML = isPaused 
-                ? '<svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>'
-                : '<svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+    // Parallax background effect on scroll
+    let ticking = false;
+    
+    const updateBackground = () => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const sectionCenter = rect.top + rect.height / 2;
+            const distanceFromCenter = sectionCenter - windowHeight / 2;
+            const parallaxOffset = distanceFromCenter * 0.1;
+            
+            section.style.backgroundPositionY = `${parallaxOffset}px`;
         });
-    }
-
-    // Auto carousel (if not paused)
-    let currentSlide = 1;
-    setInterval(() => {
-        if (!isPaused) {
-            currentSlide = (currentSlide + 1) % dots.length;
-            dots.forEach((d, i) => {
-                d.classList.toggle('active', i === currentSlide);
-            });
+        
+        ticking = false;
+    };
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateBackground);
+            ticking = true;
         }
-    }, 5000);
+    });
+
+    // Carousel functionality
+    const carouselTracks = document.querySelectorAll('.carousel-track');
+    
+    document.querySelectorAll('.carousel-arrow.left').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            if (carouselTracks[i]) {
+                carouselTracks[i].scrollBy({ left: -340, behavior: 'smooth' });
+            }
+        });
+    });
+    
+    document.querySelectorAll('.carousel-arrow.right').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            if (carouselTracks[i]) {
+                carouselTracks[i].scrollBy({ left: 340, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Card hover effects
+    document.querySelectorAll('.item-card, .bundle-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
 
     // Navbar scroll effect
     const nav = document.querySelector('.main-nav');
+    let lastScroll = 0;
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const currentScroll = window.scrollY;
+        
+        if (currentScroll > 100) {
             nav.style.background = 'rgba(13, 13, 13, 0.98)';
-            nav.style.backdropFilter = 'blur(10px)';
         } else {
-            nav.style.background = 'var(--bg-primary)';
-            nav.style.backdropFilter = 'none';
+            nav.style.background = 'rgba(13, 13, 13, 0.9)';
         }
+        
+        lastScroll = currentScroll;
     });
 
-    // Update player counts randomly
-    const playerCounts = document.querySelectorAll('.card-players span');
-    setInterval(() => {
-        playerCounts.forEach(count => {
-            const current = parseFloat(count.textContent);
-            const change = (Math.random() - 0.5) * 2;
-            const newCount = Math.max(10, current + change).toFixed(1);
-            count.textContent = newCount + 'K';
-        });
-    }, 3000);
-
-    // Card hover effects
-    document.querySelectorAll('.mode-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.03)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
+    // Add to cart button animation
+    document.querySelectorAll('.add-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.style.transform = 'scale(1.2)';
+            this.style.background = 'rgba(0, 212, 170, 0.5)';
+            
+            setTimeout(() => {
+                this.style.transform = '';
+                this.style.background = '';
+            }, 200);
         });
     });
 
-    console.log('Our Trenches loaded!');
+    // Smooth scroll reveal animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Animate cards on scroll
+    document.querySelectorAll('.item-card, .bundle-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.5s ease ${(index % 6) * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Animate section titles
+    document.querySelectorAll('.section-title, .shop-header').forEach(title => {
+        title.style.opacity = '0';
+        title.style.transform = 'translateX(-30px)';
+        title.style.transition = 'all 0.6s ease';
+        observer.observe(title);
+    });
+
+    console.log('Our Trenches Item Shop loaded!');
 });
