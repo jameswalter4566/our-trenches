@@ -537,139 +537,126 @@ body {
     right: -8px;
 }
 
-/* ===== GAME MODES SECTION ===== */
-.game-modes {
-    padding: 48px 24px;
+/* ===== FEATURES SECTION - Staggered Layout ===== */
+.features-section {
+    padding: 80px 24px;
     background: var(--bg-primary);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.section-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-left: 24px;
+.features-header {
+    text-align: center;
+    margin-bottom: 80px;
 }
 
-.modes-scroll {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 0 24px 16px;
-    scroll-snap-type: x mandatory;
-}
-
-.modes-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.modes-scroll::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
-
-.modes-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.2);
-    border-radius: 4px;
-}
-
-.mode-card {
-    flex: 0 0 200px;
-    height: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    scroll-snap-align: start;
-    transition: transform 0.2s;
-}
-
-.mode-card:hover {
-    transform: scale(1.02);
-}
-
-.card-image {
-    position: absolute;
-    inset: 0;
-}
-
-.card-badge.epic-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    z-index: 2;
-}
-
-.card-rating {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    z-index: 2;
-}
-
-.card-rating.e10 { background: #ff9500; color: #000; }
-.card-rating.teen { background: #9b59b6; color: #fff; }
-
-.card-content-overlay {
-    position: absolute;
-    bottom: 40px;
-    left: 12px;
-    right: 12px;
-    z-index: 2;
-}
-
-.card-title {
+.features-title {
     font-family: 'Teko', sans-serif;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 0.95;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.card-subtitle {
-    font-family: 'Teko', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 16px;
     letter-spacing: 2px;
-    color: var(--accent-yellow);
 }
 
-.card-label {
-    display: inline-block;
-    background: #e74c3c;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 10px;
+.features-subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Feature Row */
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.feature-row.reverse {
+    direction: rtl;
+}
+
+.feature-row.reverse > * {
+    direction: ltr;
+}
+
+.feature-text {
+    padding: 20px 0;
+}
+
+.feature-heading {
+    font-family: 'Teko', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: 700;
-    margin-top: 4px;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
-.card-players {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
+.feature-description {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.feature-btn {
+    display: inline-block;
+    background: var(--accent-yellow);
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.feature-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(245, 245, 37, 0.3);
+}
+
+.feature-image {
+    width: 100%;
+}
+
+.feature-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    z-index: 2;
-    background: rgba(0,0,0,0.5);
-    padding: 4px 10px;
-    border-radius: 4px;
+    justify-content: center;
+    font-size: 64px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
-.card-players::before {
-    content: "🎮";
-    font-size: 12px;
+/* Responsive */
+@media (max-width: 768px) {
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .feature-row.reverse {
+        direction: ltr;
+    }
+    
+    .feature-text {
+        order: 2;
+    }
+    
+    .feature-image {
+        order: 1;
+    }
 }
 
 /* ===== FOOTER ===== */
