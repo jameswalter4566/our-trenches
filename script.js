@@ -1,8 +1,11 @@
-// Our Trenches - EXACT ipodotrun_v2 3D Carousel Replica
+// Our Trenches - Debug Panel + 3D Carousel
+
+// ===== GLOBAL VARIABLES =====
+let debugCollapsed = false;
+window.carouselSpacing = 75;
+window.carouselCardScale = 1;
 
 // ===== DEBUG PANEL FUNCTIONS =====
-let debugCollapsed = false;
-
 function toggleDebug() {
     debugCollapsed = !debugCollapsed;
     const content = document.getElementById('debugContent');
@@ -17,6 +20,8 @@ function toggleDebug() {
 }
 
 function updateStyles() {
+    console.log('updateStyles called');
+    
     // Get all values
     const bgPosY = document.getElementById('bgPosY').value;
     const bgPosX = document.getElementById('bgPosX').value;
@@ -50,12 +55,15 @@ function updateStyles() {
     if (bgImage) {
         bgImage.style.objectPosition = `${bgPosX}% ${bgPosY}%`;
         bgImage.style.transform = `scale(${bgScale / 100})`;
+        bgImage.style.transformOrigin = 'center center';
+        console.log('BG updated:', bgPosX, bgPosY, bgScale);
     }
     
     // Apply hero section height
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
         heroSection.style.minHeight = `${bgHeight}px`;
+        console.log('Hero height:', bgHeight);
     }
     
     // Apply text styles
@@ -64,6 +72,7 @@ function updateStyles() {
     if (heroTitle) {
         heroTitle.style.fontSize = `${textSize}px`;
         heroTitle.style.opacity = textOpacity / 100;
+        console.log('Title updated:', textSize, textOpacity);
     }
     if (heroTextContent) {
         heroTextContent.style.paddingTop = `${textTop}px`;
@@ -74,13 +83,16 @@ function updateStyles() {
     if (carouselContainer) {
         carouselContainer.style.paddingTop = `${carouselTop}px`;
         carouselContainer.style.paddingBottom = `${carouselTop}px`;
+        console.log('Carousel padding:', carouselTop);
     }
     
     // Update carousel card transforms with new spacing
     window.carouselSpacing = parseInt(carouselSpace);
     window.carouselCardScale = parseInt(carouselScale) / 100;
-    if (typeof updateCarousel === 'function') {
-        updateCarousel();
+    
+    // Call carousel update if it exists
+    if (window.updateCarousel) {
+        window.updateCarousel();
     }
     
     // Update output
@@ -117,13 +129,11 @@ function copyValues() {
     });
 }
 
-// Initialize debug on load
-window.carouselSpacing = 75;
-window.carouselCardScale = 1;
-
+// ===== CAROUSEL CODE =====
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize debug output
     updateDebugOutput();
-});
+    
     // Carousel state
     let carouselIndex = 0;
     const cards = document.querySelectorAll('.carousel-card');
@@ -131,18 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    // 3D Carousel transform helper - EXACT replica from ipodotrun_v2/heaven.xyz
-    // Using rotateY for 3D angles and translateX for positioning
+    // 3D Carousel transform helper
     function getCarouselTransform(position, total) {
-        // Normalize position to be relative to center
         let relPos = position;
         if (relPos > total / 2) relPos -= total;
 
-        // Get spacing from debug panel (default 75)
         const spacing = window.carouselSpacing || 75;
         const cardScale = window.carouselCardScale || 1;
 
-        // Define transforms for each position with dynamic spacing
         const transforms = {
             '-3': {
                 transform: `translateX(-${spacing * 2.9}%) rotateY(70deg) scale(${0.7 * cardScale})`,
@@ -181,47 +187,43 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         };
 
-        // Clamp position to available transforms
         const clampedPos = Math.max(-3, Math.min(3, Math.round(relPos)));
         return transforms[clampedPos.toString()] || transforms['0'];
     }
 
-    // Update carousel positions (global for debug panel)
+    // Update carousel positions - GLOBAL
     window.updateCarousel = function() {
         cards.forEach((card, index) => {
             const position = (index - carouselIndex + totalCards) % totalCards;
             const transforms = getCarouselTransform(position, totalCards);
-
             card.style.transform = transforms.transform;
             card.style.opacity = transforms.opacity;
             card.style.zIndex = transforms.zIndex;
         });
-    }
+    };
 
-    // Navigation handlers
+    // Navigation
     function goToPrev() {
         carouselIndex = (carouselIndex - 1 + totalCards) % totalCards;
-        updateCarousel();
+        window.updateCarousel();
     }
 
     function goToNext() {
         carouselIndex = (carouselIndex + 1) % totalCards;
-        updateCarousel();
+        window.updateCarousel();
     }
 
-    // Event listeners
     if (prevBtn) prevBtn.addEventListener('click', goToPrev);
     if (nextBtn) nextBtn.addEventListener('click', goToNext);
 
-    // Keyboard navigation
+    // Keyboard
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') goToPrev();
         if (e.key === 'ArrowRight') goToNext();
     });
 
-    // Touch/swipe support
+    // Touch/swipe
     let touchStartX = 0;
-    let touchEndX = 0;
     const carouselContainer = document.querySelector('.carousel-container');
     
     if (carouselContainer) {
@@ -230,61 +232,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         carouselContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
+            const touchEndX = e.changedTouches[0].screenX;
             const diff = touchStartX - touchEndX;
             if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    goToNext();
-                } else {
-                    goToPrev();
-                }
+                diff > 0 ? goToNext() : goToPrev();
             }
         }, { passive: true });
     }
 
-    // Click on card to select it
+    // Click on card
     cards.forEach((card, index) => {
         card.addEventListener('click', () => {
             const position = (index - carouselIndex + totalCards) % totalCards;
             let relPos = position;
             if (relPos > totalCards / 2) relPos -= totalCards;
             
-            // Only navigate if not clicking the center card
             if (relPos !== 0) {
-                if (relPos < 0) {
-                    carouselIndex = (carouselIndex + relPos + totalCards) % totalCards;
-                } else {
-                    carouselIndex = (carouselIndex + relPos) % totalCards;
-                }
-                updateCarousel();
+                carouselIndex = (carouselIndex + relPos + totalCards) % totalCards;
+                window.updateCarousel();
             }
         });
     });
 
     // Initialize carousel
-    updateCarousel();
+    window.updateCarousel();
 
-    // Navbar scroll effect
+    // Navbar scroll
     const nav = document.querySelector('.main-nav');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.style.background = 'rgba(13, 13, 13, 0.98)';
-        } else {
-            nav.style.background = 'rgba(13, 13, 13, 0.95)';
-        }
+        nav.style.background = window.scrollY > 50 ? 'rgba(13, 13, 13, 0.98)' : 'rgba(13, 13, 13, 0.95)';
     });
 
-    // Mode card hover effects
-    document.querySelectorAll('.mode-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.03)';
-            card.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.4)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
-            card.style.boxShadow = 'none';
-        });
-    });
-
-    console.log('Our Trenches - 3D Carousel initialized (ipodotrun replica)');
+    console.log('Our Trenches initialized - Debug panel ready!');
 });
