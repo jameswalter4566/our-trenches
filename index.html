@@ -10,6 +10,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- DEBUG PANEL -->
+    <div id="debugPanel" class="debug-panel">
+        <div class="debug-header">
+            <span>🛠️ DEBUG CONTROLS</span>
+            <button onclick="toggleDebug()">−</button>
+        </div>
+        <div class="debug-content" id="debugContent">
+            <!-- Hero Image Controls -->
+            <div class="debug-section">
+                <h4>BACKGROUND IMAGE</h4>
+                <label>Position Y: <span id="bgPosYVal">0</span>%</label>
+                <input type="range" id="bgPosY" min="-100" max="100" value="0" oninput="updateStyles()">
+                <label>Position X: <span id="bgPosXVal">50</span>%</label>
+                <input type="range" id="bgPosX" min="0" max="100" value="50" oninput="updateStyles()">
+                <label>Scale: <span id="bgScaleVal">100</span>%</label>
+                <input type="range" id="bgScale" min="50" max="200" value="100" oninput="updateStyles()">
+                <label>Height: <span id="bgHeightVal">500</span>px</label>
+                <input type="range" id="bgHeight" min="200" max="1000" value="500" oninput="updateStyles()">
+            </div>
+            
+            <!-- Hero Text Controls -->
+            <div class="debug-section">
+                <h4>HERO TEXT</h4>
+                <label>Top Padding: <span id="textTopVal">40</span>px</label>
+                <input type="range" id="textTop" min="0" max="200" value="40" oninput="updateStyles()">
+                <label>Font Size: <span id="textSizeVal">72</span>px</label>
+                <input type="range" id="textSize" min="20" max="120" value="72" oninput="updateStyles()">
+                <label>Opacity: <span id="textOpacityVal">100</span>%</label>
+                <input type="range" id="textOpacity" min="0" max="100" value="100" oninput="updateStyles()">
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="debug-section">
+                <h4>CAROUSEL</h4>
+                <label>Top Padding: <span id="carouselTopVal">60</span>px</label>
+                <input type="range" id="carouselTop" min="0" max="200" value="60" oninput="updateStyles()">
+                <label>Card Scale: <span id="carouselScaleVal">100</span>%</label>
+                <input type="range" id="carouselScale" min="50" max="150" value="100" oninput="updateStyles()">
+                <label>Spacing: <span id="carouselSpaceVal">75</span>%</label>
+                <input type="range" id="carouselSpace" min="30" max="150" value="75" oninput="updateStyles()">
+            </div>
+            
+            <!-- Output Values -->
+            <div class="debug-section">
+                <h4>📋 CURRENT VALUES</h4>
+                <pre id="debugOutput"></pre>
+                <button onclick="copyValues()">Copy Values</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">

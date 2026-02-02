@@ -1,6 +1,129 @@
 // Our Trenches - EXACT ipodotrun_v2 3D Carousel Replica
 
+// ===== DEBUG PANEL FUNCTIONS =====
+let debugCollapsed = false;
+
+function toggleDebug() {
+    debugCollapsed = !debugCollapsed;
+    const content = document.getElementById('debugContent');
+    const btn = document.querySelector('.debug-header button');
+    if (debugCollapsed) {
+        content.classList.add('collapsed');
+        btn.textContent = '+';
+    } else {
+        content.classList.remove('collapsed');
+        btn.textContent = '−';
+    }
+}
+
+function updateStyles() {
+    // Get all values
+    const bgPosY = document.getElementById('bgPosY').value;
+    const bgPosX = document.getElementById('bgPosX').value;
+    const bgScale = document.getElementById('bgScale').value;
+    const bgHeight = document.getElementById('bgHeight').value;
+    
+    const textTop = document.getElementById('textTop').value;
+    const textSize = document.getElementById('textSize').value;
+    const textOpacity = document.getElementById('textOpacity').value;
+    
+    const carouselTop = document.getElementById('carouselTop').value;
+    const carouselScale = document.getElementById('carouselScale').value;
+    const carouselSpace = document.getElementById('carouselSpace').value;
+    
+    // Update value displays
+    document.getElementById('bgPosYVal').textContent = bgPosY;
+    document.getElementById('bgPosXVal').textContent = bgPosX;
+    document.getElementById('bgScaleVal').textContent = bgScale;
+    document.getElementById('bgHeightVal').textContent = bgHeight;
+    
+    document.getElementById('textTopVal').textContent = textTop;
+    document.getElementById('textSizeVal').textContent = textSize;
+    document.getElementById('textOpacityVal').textContent = textOpacity;
+    
+    document.getElementById('carouselTopVal').textContent = carouselTop;
+    document.getElementById('carouselScaleVal').textContent = carouselScale;
+    document.getElementById('carouselSpaceVal').textContent = carouselSpace;
+    
+    // Apply background image styles
+    const bgImage = document.querySelector('.hero-bg-image');
+    if (bgImage) {
+        bgImage.style.objectPosition = `${bgPosX}% ${bgPosY}%`;
+        bgImage.style.transform = `scale(${bgScale / 100})`;
+    }
+    
+    // Apply hero section height
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        heroSection.style.minHeight = `${bgHeight}px`;
+    }
+    
+    // Apply text styles
+    const heroTitle = document.querySelector('.hero-title');
+    const heroTextContent = document.querySelector('.hero-text-content');
+    if (heroTitle) {
+        heroTitle.style.fontSize = `${textSize}px`;
+        heroTitle.style.opacity = textOpacity / 100;
+    }
+    if (heroTextContent) {
+        heroTextContent.style.paddingTop = `${textTop}px`;
+    }
+    
+    // Apply carousel styles
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.style.paddingTop = `${carouselTop}px`;
+        carouselContainer.style.paddingBottom = `${carouselTop}px`;
+    }
+    
+    // Update carousel card transforms with new spacing
+    window.carouselSpacing = parseInt(carouselSpace);
+    window.carouselCardScale = parseInt(carouselScale) / 100;
+    if (typeof updateCarousel === 'function') {
+        updateCarousel();
+    }
+    
+    // Update output
+    updateDebugOutput();
+}
+
+function updateDebugOutput() {
+    const output = {
+        background: {
+            positionY: document.getElementById('bgPosY').value + '%',
+            positionX: document.getElementById('bgPosX').value + '%',
+            scale: document.getElementById('bgScale').value + '%',
+            height: document.getElementById('bgHeight').value + 'px'
+        },
+        heroText: {
+            topPadding: document.getElementById('textTop').value + 'px',
+            fontSize: document.getElementById('textSize').value + 'px',
+            opacity: document.getElementById('textOpacity').value + '%'
+        },
+        carousel: {
+            topPadding: document.getElementById('carouselTop').value + 'px',
+            cardScale: document.getElementById('carouselScale').value + '%',
+            spacing: document.getElementById('carouselSpace').value + '%'
+        }
+    };
+    
+    document.getElementById('debugOutput').textContent = JSON.stringify(output, null, 2);
+}
+
+function copyValues() {
+    const output = document.getElementById('debugOutput').textContent;
+    navigator.clipboard.writeText(output).then(() => {
+        alert('Values copied to clipboard!');
+    });
+}
+
+// Initialize debug on load
+window.carouselSpacing = 75;
+window.carouselCardScale = 1;
+
 document.addEventListener('DOMContentLoaded', () => {
+    updateDebugOutput();
+});
     // Carousel state
     let carouselIndex = 0;
     const cards = document.querySelectorAll('.carousel-card');
@@ -15,43 +138,44 @@ document.addEventListener('DOMContentLoaded', () => {
         let relPos = position;
         if (relPos > total / 2) relPos -= total;
 
-        // Define transforms for each position
-        // 3 cards visible, closer together, ±2 cards peeking from edges
+        // Get spacing from debug panel (default 75)
+        const spacing = window.carouselSpacing || 75;
+        const cardScale = window.carouselCardScale || 1;
+
+        // Define transforms for each position with dynamic spacing
         const transforms = {
             '-3': {
-                transform: 'translateX(-220%) rotateY(70deg) scale(0.7)',
+                transform: `translateX(-${spacing * 2.9}%) rotateY(70deg) scale(${0.7 * cardScale})`,
                 opacity: 0,
                 zIndex: 10,
             },
             '-2': {
-                // Far left - only inner half visible (peeking from left edge)
-                transform: 'translateX(-150%) rotateY(50deg) scale(0.78)',
+                transform: `translateX(-${spacing * 2}%) rotateY(50deg) scale(${0.78 * cardScale})`,
                 opacity: 0.6,
                 zIndex: 20,
             },
             '-1': {
-                transform: 'translateX(-75%) rotateY(40deg) scale(0.9)',
+                transform: `translateX(-${spacing}%) rotateY(40deg) scale(${0.9 * cardScale})`,
                 opacity: 1,
                 zIndex: 30,
             },
             '0': {
-                transform: 'translateX(0%) rotateY(0deg) scale(1)',
+                transform: `translateX(0%) rotateY(0deg) scale(${1 * cardScale})`,
                 opacity: 1,
                 zIndex: 50,
             },
             '1': {
-                transform: 'translateX(75%) rotateY(-40deg) scale(0.9)',
+                transform: `translateX(${spacing}%) rotateY(-40deg) scale(${0.9 * cardScale})`,
                 opacity: 1,
                 zIndex: 30,
             },
             '2': {
-                // Far right - only inner half visible (peeking from right edge)
-                transform: 'translateX(150%) rotateY(-50deg) scale(0.78)',
+                transform: `translateX(${spacing * 2}%) rotateY(-50deg) scale(${0.78 * cardScale})`,
                 opacity: 0.6,
                 zIndex: 20,
             },
             '3': {
-                transform: 'translateX(220%) rotateY(-70deg) scale(0.7)',
+                transform: `translateX(${spacing * 2.9}%) rotateY(-70deg) scale(${0.7 * cardScale})`,
                 opacity: 0,
                 zIndex: 10,
             },
@@ -62,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return transforms[clampedPos.toString()] || transforms['0'];
     }
 
-    // Update carousel positions
-    function updateCarousel() {
+    // Update carousel positions (global for debug panel)
+    window.updateCarousel = function() {
         cards.forEach((card, index) => {
             const position = (index - carouselIndex + totalCards) % totalCards;
             const transforms = getCarouselTransform(position, totalCards);
