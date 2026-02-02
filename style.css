@@ -537,87 +537,93 @@ body {
     right: -8px;
 }
 
-/* ===== FEATURES SECTION - Fortnite Staggered Layout ===== */
+/* ===== FEATURES SECTION - EXACT Fortnite Layout ===== */
 .features-section {
-    padding: 60px 0 80px;
+    padding: 80px 0;
     background: var(--bg-primary);
     overflow: hidden;
 }
 
 .features-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     padding: 0 24px;
 }
 
 .features-title {
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 900;
     font-style: italic;
     color: #fff;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 .features-subtitle {
     font-size: 14px;
     color: rgba(255,255,255,0.5);
-    max-width: 500px;
+    max-width: 480px;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Feature Row */
+/* Feature Row - EXACT Fortnite positioning */
 .feature-row {
     display: flex;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto 40px;
-    padding: 0 40px;
-    gap: 40px;
+    margin-bottom: 40px;
+    padding: 0;
 }
 
+/* Row 1: Text on left edge, Image on right edge */
+.feature-row:not(.reverse) .feature-text {
+    width: 30%;
+    padding: 0 0 0 80px;
+}
+
+.feature-row:not(.reverse) .feature-image {
+    width: 50%;
+    margin-left: auto;
+}
+
+/* Row 2: Image on left edge, Text on right edge */
 .feature-row.reverse {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
-/* Text Column */
-.feature-text-left,
-.feature-text-right {
-    flex: 0 0 320px;
+.feature-row.reverse .feature-image {
+    width: 50%;
 }
 
-/* Image Column */
-.feature-image-right,
-.feature-image-left {
-    flex: 1;
-    max-width: 500px;
+.feature-row.reverse .feature-text {
+    width: 30%;
+    margin-left: auto;
+    padding: 0 80px 0 60px;
 }
 
-/* Text Styles - Fortnite exact */
+/* Text Styles - EXACT Fortnite */
 .feature-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 900;
     font-style: italic;
     color: #fff;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     text-transform: uppercase;
 }
 
 .feature-description {
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(255,255,255,0.6);
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .feature-btn {
     display: inline-block;
     background: var(--accent-yellow);
     color: #000;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 4px;
     text-decoration: none;
     font-size: 12px;
@@ -632,7 +638,7 @@ body {
     box-shadow: 0 5px 20px rgba(245, 245, 37, 0.3);
 }
 
-/* Image */
+/* Image - extends to edge */
 .feature-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
@@ -644,29 +650,42 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-    .feature-row {
-        flex-direction: column;
-        gap: 24px;
-        padding: 0 24px;
+@media (max-width: 1024px) {
+    .feature-row:not(.reverse) .feature-text,
+    .feature-row.reverse .feature-text {
+        width: 40%;
+        padding: 0 40px;
     }
     
+    .feature-row:not(.reverse) .feature-image,
+    .feature-row.reverse .feature-image {
+        width: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-title {
+        font-size: 28px;
+    }
+    
+    .feature-row,
     .feature-row.reverse {
         flex-direction: column;
+        gap: 24px;
     }
     
-    .feature-text-left,
-    .feature-text-right {
-        flex: none;
+    .feature-row:not(.reverse) .feature-text,
+    .feature-row.reverse .feature-text {
         width: 100%;
-        text-align: center;
+        padding: 0 24px;
+        order: 2;
     }
     
-    .feature-image-right,
-    .feature-image-left {
-        flex: none;
+    .feature-row:not(.reverse) .feature-image,
+    .feature-row.reverse .feature-image {
         width: 100%;
-        max-width: 100%;
+        margin: 0;
+        order: 1;
     }
 }
 
