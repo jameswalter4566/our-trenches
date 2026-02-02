@@ -589,9 +589,9 @@ body {
     flex: 0 0 420px;
 }
 
-/* Row 2: Image Left, Text Right */
+/* Row 2: Image Left, Text Right (HTML order is already correct) */
 .feature-row.reverse {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .feature-row.reverse .feature-image {
