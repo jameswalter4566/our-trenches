@@ -537,17 +537,17 @@ body {
     right: -8px;
 }
 
-/* ===== FEATURES SECTION - Staggered Layout ===== */
+/* ===== FEATURES SECTION - Fortnite Staggered Layout ===== */
 .features-section {
-    padding: 80px 24px;
+    padding: 80px 0;
     background: var(--bg-primary);
-    max-width: 1200px;
-    margin: 0 auto;
+    overflow: hidden;
 }
 
 .features-header {
     text-align: center;
     margin-bottom: 80px;
+    padding: 0 24px;
 }
 
 .features-title {
@@ -568,30 +568,48 @@ body {
     line-height: 1.6;
 }
 
-/* Feature Row */
+/* Feature Row - Full Width */
 .feature-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+    min-height: 400px;
 }
 
+/* Row 1: Text Left, Image Right */
+.feature-row:not(.reverse) {
+    justify-content: space-between;
+}
+
+.feature-text-left {
+    width: 35%;
+    padding: 40px 0 40px 80px;
+}
+
+.feature-image-right {
+    width: 55%;
+    margin-right: -5%;
+}
+
+/* Row 2: Image Left, Text Right */
 .feature-row.reverse {
-    direction: rtl;
+    justify-content: space-between;
 }
 
-.feature-row.reverse > * {
-    direction: ltr;
+.feature-image-left {
+    width: 55%;
+    margin-left: -5%;
 }
 
-.feature-text {
-    padding: 20px 0;
+.feature-text-right {
+    width: 35%;
+    padding: 40px 80px 40px 0;
 }
 
+/* Text Styles */
 .feature-heading {
     font-family: 'Teko', sans-serif;
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(28px, 4vw, 42px);
     font-weight: 700;
     font-style: italic;
     color: #fff;
@@ -600,7 +618,7 @@ body {
 }
 
 .feature-description {
-    font-size: 16px;
+    font-size: 15px;
     color: rgba(255,255,255,0.7);
     line-height: 1.7;
     margin-bottom: 24px;
@@ -624,13 +642,10 @@ body {
     box-shadow: 0 10px 30px rgba(245, 245, 37, 0.3);
 }
 
-.feature-image {
-    width: 100%;
-}
-
+/* Image Placeholder */
 .feature-img-placeholder {
     width: 100%;
-    aspect-ratio: 16/10;
+    aspect-ratio: 16/9;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -640,21 +655,37 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .feature-text-left,
+    .feature-text-right {
+        width: 40%;
+        padding: 30px 40px;
+    }
+    
+    .feature-image-right,
+    .feature-image-left {
+        width: 55%;
+    }
+}
+
 @media (max-width: 768px) {
-    .feature-row {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
+    .feature-row,
     .feature-row.reverse {
-        direction: ltr;
+        flex-direction: column;
+        min-height: auto;
     }
     
-    .feature-text {
+    .feature-text-left,
+    .feature-text-right {
+        width: 100%;
+        padding: 30px 24px;
         order: 2;
     }
     
-    .feature-image {
+    .feature-image-right,
+    .feature-image-left {
+        width: 100%;
+        margin: 0;
         order: 1;
     }
 }
