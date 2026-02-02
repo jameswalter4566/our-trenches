@@ -195,19 +195,14 @@ body {
     right: 0;
     bottom: 0;
     z-index: 0;
+    overflow: hidden;
 }
 
-.hero-bg-placeholder {
+.hero-bg-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, 
-        #1a0a2e 0%, 
-        #16213e 30%, 
-        #0f0f23 60%,
-        #0d0d0d 100%
-    );
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .hero-overlay {
