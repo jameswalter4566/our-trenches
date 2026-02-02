@@ -572,13 +572,13 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    padding: 0;
+    padding: 0 40px;
 }
 
 /* Row 1: Text on left edge, Image on right edge */
 .feature-row:not(.reverse) .feature-text {
-    width: 30%;
-    padding: 0 0 0 80px;
+    width: 35%;
+    padding: 0 40px 0 40px;
 }
 
 .feature-row:not(.reverse) .feature-image {
@@ -596,9 +596,9 @@ body {
 }
 
 .feature-row.reverse .feature-text {
-    width: 30%;
+    width: 35%;
     margin-left: auto;
-    padding: 0 80px 0 60px;
+    padding: 0 40px 0 40px;
 }
 
 /* Text Styles - EXACT Fortnite */
