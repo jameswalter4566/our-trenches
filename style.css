@@ -567,40 +567,39 @@ body {
     line-height: 1.6;
 }
 
-/* Feature Row - EXACT Fortnite positioning */
+/* Feature Row - Centered like Fortnite */
 .feature-row {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
-    padding: 0 40px;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    padding: 0 60px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Row 1: Text on left edge, Image on right edge */
+/* Row 1: Text Left, Image Right */
 .feature-row:not(.reverse) .feature-text {
-    width: 35%;
-    padding: 0 40px 0 40px;
+    flex: 0 0 320px;
 }
 
 .feature-row:not(.reverse) .feature-image {
-    width: 35%;
-    max-width: 450px;
-    margin-left: auto;
+    flex: 0 0 420px;
 }
 
-/* Row 2: Image on left edge, Text on right edge */
+/* Row 2: Image Left, Text Right */
 .feature-row.reverse {
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 
 .feature-row.reverse .feature-image {
-    width: 35%;
-    max-width: 450px;
+    flex: 0 0 420px;
 }
 
 .feature-row.reverse .feature-text {
-    width: 35%;
-    margin-left: auto;
-    padding: 0 40px 0 40px;
+    flex: 0 0 320px;
 }
 
 /* Text Styles - EXACT Fortnite */
