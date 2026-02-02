@@ -639,6 +639,14 @@ body {
 }
 
 /* Image - extends to edge */
+.feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+}
+
 .feature-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
