@@ -50,243 +50,159 @@
         </div>
     </nav>
 
-    <!-- Hero Carousel Section (replacing old hero) -->
-    <section class="hero-carousel-section">
-        <div class="carousel-header">
-            <h2 class="carousel-title">Featured</h2>
-            <a href="#" class="view-all-link">[VIEW ALL] →</a>
+    <!-- Hero Section with Background Image -->
+    <section class="hero-section">
+        <!-- Background Image Placeholder -->
+        <div class="hero-background">
+            <div class="hero-bg-placeholder"></div>
+            <div class="hero-overlay"></div>
         </div>
         
-        <!-- Infinite Carousel -->
-        <div class="hero-carousel-container">
-            <!-- Gradient fade edges -->
-            <div class="carousel-fade-left"></div>
-            <div class="carousel-fade-right"></div>
-            
-            <!-- Scrolling track -->
-            <div class="hero-carousel-track">
-                <!-- Card 1 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">BATTLE</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">BATTLE ROYALE</h3>
-                        <p class="card-tagline">> Drop in. Last one standing wins.</p>
-                        <div class="card-stats">
-                            <span>156.4K playing</span>
-                            <span>2 min ago</span>
+        <!-- Hero Text Content -->
+        <div class="hero-text-content">
+            <h1 class="hero-title">TRENCHES GAME IS LIVE ON EPIC GAMES</h1>
+            <p class="hero-subtitle">The First Battle Royale on Solana. Squad up & fight to win cash.</p>
+        </div>
+
+        <!-- 3D Carousel - EXACT ipodotrun replica -->
+        <div class="carousel-container">
+            <div class="carousel-wrapper" style="perspective: 1000px; perspective-origin: 50% 50%;">
+                <div class="carousel-track" id="carouselTrack" style="transform-style: preserve-3d;">
+                    
+                    <!-- Card 1 - TRENCHES -->
+                    <div class="carousel-card" data-index="0">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <!-- Top row -->
+                                <div class="card-top-row">
+                                    <div class="card-social-icons">
+                                        <a href="https://trenchesgame.com/" target="_blank" class="social-link">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                            </svg>
+                                        </a>
+                                        <a href="https://x.com/thetrenchesgame" target="_blank" class="social-link">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="card-status live">Listing is live</div>
+                                </div>
+                                
+                                <!-- Middle section -->
+                                <div class="card-middle">
+                                    <div class="card-avatar">
+                                        <img src="https://pbs.twimg.com/profile_images/1879014489498431488/nhYSoden_400x400.jpg" alt="TRENCHES">
+                                    </div>
+                                    <p class="card-ticker">$TRENCH</p>
+                                    <p class="card-name">TRENCHES</p>
+                                    <p class="card-description">The First Battle Royale on Solana listed on Epic Games. Squad up & fight to win cash.</p>
+                                </div>
+                                
+                                <!-- Bottom spacer -->
+                                <div class="card-bottom"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">ZERO</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">ZERO BUILD</h3>
-                        <p class="card-tagline">> Pure gunplay. No building.</p>
-                        <div class="card-stats">
-                            <span>251.2K playing</span>
-                            <span>Just now</span>
+
+                    <!-- Card 2 - Coming Soon -->
+                    <div class="carousel-card" data-index="1">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div class="card-top-row">
+                                    <div class="card-social-icons"></div>
+                                    <div class="card-status pending">PENDING</div>
+                                </div>
+                                <div class="card-middle">
+                                    <div class="card-avatar placeholder">
+                                        <span>?</span>
+                                    </div>
+                                    <p class="card-ticker">$???</p>
+                                    <p class="card-name">???</p>
+                                    <p class="card-description">Coming soon...</p>
+                                </div>
+                                <div class="card-bottom"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">RANKED</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">RANKED MODE</h3>
-                        <p class="card-tagline">> Prove your skill. Climb the ranks.</p>
-                        <div class="card-stats">
-                            <span>89.4K playing</span>
-                            <span>5 min ago</span>
+
+                    <!-- Card 3 - Coming Soon -->
+                    <div class="carousel-card" data-index="2">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div class="card-top-row">
+                                    <div class="card-social-icons"></div>
+                                    <div class="card-status pending">PENDING</div>
+                                </div>
+                                <div class="card-middle">
+                                    <div class="card-avatar placeholder">
+                                        <span>?</span>
+                                    </div>
+                                    <p class="card-ticker">$???</p>
+                                    <p class="card-name">???</p>
+                                    <p class="card-description">Coming soon...</p>
+                                </div>
+                                <div class="card-bottom"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">CREATIVE</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">CREATIVE</h3>
-                        <p class="card-tagline">> Build your own worlds.</p>
-                        <div class="card-stats">
-                            <span>178.9K playing</span>
-                            <span>1 min ago</span>
+
+                    <!-- Card 4 - Coming Soon -->
+                    <div class="carousel-card" data-index="3">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div class="card-top-row">
+                                    <div class="card-social-icons"></div>
+                                    <div class="card-status pending">PENDING</div>
+                                </div>
+                                <div class="card-middle">
+                                    <div class="card-avatar placeholder">
+                                        <span>?</span>
+                                    </div>
+                                    <p class="card-ticker">$???</p>
+                                    <p class="card-name">???</p>
+                                    <p class="card-description">Coming soon...</p>
+                                </div>
+                                <div class="card-bottom"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Card 5 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">RELOAD</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">RELOAD</h3>
-                        <p class="card-tagline">> Fast respawns. Non-stop action.</p>
-                        <div class="card-stats">
-                            <span>61.8K playing</span>
-                            <span>3 min ago</span>
+
+                    <!-- Card 5 - Coming Soon -->
+                    <div class="carousel-card" data-index="4">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div class="card-top-row">
+                                    <div class="card-social-icons"></div>
+                                    <div class="card-status pending">PENDING</div>
+                                </div>
+                                <div class="card-middle">
+                                    <div class="card-avatar placeholder">
+                                        <span>?</span>
+                                    </div>
+                                    <p class="card-ticker">$???</p>
+                                    <p class="card-name">???</p>
+                                    <p class="card-description">Coming soon...</p>
+                                </div>
+                                <div class="card-bottom"></div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-                
-                <!-- Card 6 -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">SQUADS</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">SQUADS</h3>
-                        <p class="card-tagline">> Team up. Take the victory.</p>
-                        <div class="card-stats">
-                            <span>312.7K playing</span>
-                            <span>Just now</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Duplicate cards for seamless loop -->
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">BATTLE</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">BATTLE ROYALE</h3>
-                        <p class="card-tagline">> Drop in. Last one standing wins.</p>
-                        <div class="card-stats">
-                            <span>156.4K playing</span>
-                            <span>2 min ago</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">ZERO</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">ZERO BUILD</h3>
-                        <p class="card-tagline">> Pure gunplay. No building.</p>
-                        <div class="card-stats">
-                            <span>251.2K playing</span>
-                            <span>Just now</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">RANKED</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">RANKED MODE</h3>
-                        <p class="card-tagline">> Prove your skill. Climb the ranks.</p>
-                        <div class="card-stats">
-                            <span>89.4K playing</span>
-                            <span>5 min ago</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">CREATIVE</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">CREATIVE</h3>
-                        <p class="card-tagline">> Build your own worlds.</p>
-                        <div class="card-stats">
-                            <span>178.9K playing</span>
-                            <span>1 min ago</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">RELOAD</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">RELOAD</h3>
-                        <p class="card-tagline">> Fast respawns. Non-stop action.</p>
-                        <div class="card-stats">
-                            <span>61.8K playing</span>
-                            <span>3 min ago</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-carousel-card" style="--card-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                    <div class="carousel-card-header">
-                        <div class="card-dot red"></div>
-                        <div class="card-dot yellow"></div>
-                        <div class="card-dot green"></div>
-                        <span class="card-ticker">SQUADS</span>
-                    </div>
-                    <div class="carousel-card-body">
-                        <span class="card-badge live">● LIVE</span>
-                        <h3 class="card-name">SQUADS</h3>
-                        <p class="card-tagline">> Team up. Take the victory.</p>
-                        <div class="card-stats">
-                            <span>312.7K playing</span>
-                            <span>Just now</span>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Navigation Arrows - EXACT heaven.xyz style -->
+                <button class="carousel-arrow left" id="prevBtn">
+                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.5 9.5L4.5 6.5L7.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-arrow right" id="nextBtn">
+                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 3.5L7.5 6.5L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -299,7 +215,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating e10">E10+</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">TRENCH<br>JAM</h3>
                     <span class="card-label">RANKED</span>
                 </div>
@@ -309,7 +225,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #1a5fb4 0%, #3584e4 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">BATTLE<br>ROYALE</h3>
                 </div>
                 <div class="card-players"><span>156.4K</span></div>
@@ -318,7 +234,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #e01b24 0%, #f66151 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">RELOAD</h3>
                     <span class="card-subtitle">SURF CITY</span>
                 </div>
@@ -328,7 +244,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #613583 0%, #9141ac 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">BLITZ</h3>
                 </div>
                 <div class="card-players"><span>67.3K</span></div>
@@ -337,7 +253,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #26a269 0%, #33d17a 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">ZERO<br>BUILD</h3>
                 </div>
                 <div class="card-players"><span>251.2K</span></div>
@@ -346,21 +262,11 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #c64600 0%, #ff7800 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">RELOAD</h3>
                     <span class="card-subtitle">SURF CITY</span>
                 </div>
                 <div class="card-players"><span>24.1K</span></div>
-            </div>
-            <div class="mode-card">
-                <div class="card-image" style="background: linear-gradient(135deg, #1c71d8 0%, #62a0ea 100%);"></div>
-                <div class="card-badge epic-badge"><span>OT</span></div>
-                <div class="card-rating teen">T</div>
-                <div class="card-content">
-                    <h3 class="card-title">OG</h3>
-                    <span class="card-label season">SEASON 7</span>
-                </div>
-                <div class="card-players"><span>59.2K</span></div>
             </div>
         </div>
     </section>
@@ -373,7 +279,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #9141ac 0%, #c061cb 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">RANKED</h3>
                 </div>
                 <div class="card-players"><span>145.2K</span></div>
@@ -382,7 +288,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #1a5fb4 0%, #3584e4 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">TEAM<br>RUMBLE</h3>
                 </div>
                 <div class="card-players"><span>89.4K</span></div>
@@ -391,7 +297,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #a51d2d 0%, #e01b24 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">DUOS</h3>
                 </div>
                 <div class="card-players"><span>203.1K</span></div>
@@ -400,7 +306,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #e5a50a 0%, #f8e45c 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">SQUADS</h3>
                 </div>
                 <div class="card-players"><span>312.7K</span></div>
@@ -409,7 +315,7 @@
                 <div class="card-image" style="background: linear-gradient(135deg, #26a269 0%, #57e389 100%);"></div>
                 <div class="card-badge epic-badge"><span>OT</span></div>
                 <div class="card-rating teen">T</div>
-                <div class="card-content">
+                <div class="card-content-overlay">
                     <h3 class="card-title">CREATIVE</h3>
                 </div>
                 <div class="card-players"><span>178.9K</span></div>
@@ -427,7 +333,6 @@
                 <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.64 5.93h1.43v4.28h-1.43m3.93-4.28H17v4.28h-1.43M7 2L3.43 5.57v12.86h4.28V22l3.58-3.57h2.85L20.57 12V2m-1.43 9.29l-2.85 2.85h-2.86l-2.5 2.5v-2.5H7.71V3.43h11.43z"/></svg></a>
                 <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
                 <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
-                <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg></a>
             </div>
         </div>
         <div class="footer-links">
