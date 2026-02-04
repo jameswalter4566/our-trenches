@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Shop - Trenches Battle Royale</title>
+    <meta name="description" content="Trenches Item Shop - Get the latest skins, emotes, and gear for Trenches Battle Royale.">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="item-shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="item-shop-page">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="brand-logo">
+                    <img src="trenches-logo.png" alt="TRENCHES" class="nav-logo-img">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="item-shop.html" class="active">Item Shop</a></li>
+                    <li><a href="#">Leaderboard</a></li>
+                    <li><a href="#">Rewards</a></li>
+                    <li><a href="#">Tournament</a></li>
+                    <li><a href="https://discord.gg/trenches" target="_blank">Discord</a></li>
+                    <li><a href="https://x.com/thetrenchesgame" target="_blank">X</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <input type="text" placeholder="Search">
+                </div>
+                <button class="globe-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </button>
+                <a href="#" class="sign-in-btn">Sign in</a>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Item Shop Content -->
+    <main class="shop-main">
+        <!-- Shop Header -->
+        <div class="shop-header">
+            <h1 class="shop-title">ITEM SHOP</h1>
+            <p class="shop-subtitle">Powered by the Trenches Store</p>
+        </div>
+
+        <!-- Section Navigation Sidebar -->
+        <div class="shop-sidebar">
+            <button class="filter-btn" title="Filter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="8" y1="12" x2="20" y2="12"></line>
+                    <line x1="12" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+            <div class="section-dots">
+                <span class="dot active" data-section="hot-items"></span>
+                <span class="dot" data-section="trenches-drops"></span>
+                <span class="dot" data-section="legendary"></span>
+            </div>
+        </div>
+
+        <!-- Section 1: Today's Hot Items -->
+        <section class="shop-section" id="hot-items">
+            <h2 class="section-title">TODAY'S HOT ITEMS</h2>
+            <div class="shop-row">
+                <button class="row-arrow left" data-row="hot-items">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="shop-cards-track">
+                    <!-- Pepe -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2d5a27 0%, #4a9e3f 50%, #7ed957 100%);">
+                        <div class="card-badge new">NEW!</div>
+                        <div class="card-character">
+                            <span class="char-emoji">🐸</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Pepe</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,500</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Giga Chad -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #8B6914 0%, #C5A028 50%, #E8C84A 100%);">
+                        <div class="card-character">
+                            <span class="char-emoji">🗿</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Giga Chad</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,000</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chill Guy -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #1a4a6e 0%, #2980b9 50%, #5dade2 100%);">
+                        <div class="card-character">
+                            <span class="char-emoji">😎</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Chill Guy</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,200</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shiba Inu -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #b35900 0%, #e67e22 50%, #f5b041 100%);">
+                        <div class="card-badge featured">FEATURED</div>
+                        <div class="card-character">
+                            <span class="char-emoji">🐕</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Shiba Inu</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,800</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The General -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2c3e1a 0%, #4a6b2a 50%, #6b8e3a 100%);">
+                        <div class="card-character">
+                            <span class="char-emoji">🎖️</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">The General</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,500</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="row-arrow right" data-row="hot-items">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 2: Trenches Drops -->
+        <section class="shop-section" id="trenches-drops">
+            <h2 class="section-title">TRENCHES DROPS</h2>
+            <div class="shop-row">
+                <button class="row-arrow left" data-row="trenches-drops">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="shop-cards-track">
+                    <!-- Unicorn Fart Dust -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #ff6fd8 0%, #c471ed 50%, #7c83ff 100%);">
+                        <div class="card-badge new">NEW!</div>
+                        <div class="card-character">
+                            <span class="char-emoji">🦄</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Unicorn Fart Dust</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,200</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ibiza Final Boss -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #d4145a 0%, #ff2a6d 50%, #ff6b9d 100%);">
+                        <div class="card-badge featured">LEGENDARY</div>
+                        <div class="card-character">
+                            <span class="char-emoji">🕺</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Ibiza Final Boss</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 3,000</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Labubu -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #4a0e78 0%, #7b2fbe 50%, #a855f7 100%);">
+                        <div class="card-character">
+                            <span class="char-emoji">👾</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">Labubu</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,600</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Nihilist Penguin -->
+                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #0c1445 0%, #1a2980 50%, #3a5ba0 100%);">
+                        <div class="card-character">
+                            <span class="char-emoji">🐧</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-name">The Nihilist Penguin</span>
+                            <div class="card-price-row">
+                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,400</span>
+                                <button class="card-add-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="row-arrow right" data-row="trenches-drops">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section 3: Legendary Collection -->
+        <section class="shop-section" id="legendary">
+            <h2 class="section-title">LEGENDARY COLLECTION</h2>
+            <div class="shop-grid">
+                <!-- Featured Banner -->
+                <div class="shop-card featured-banner" style="--card-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);">
+                    <div class="card-badge featured">BUNDLE - SAVE 40%</div>
+                    <div class="banner-content">
+                        <div class="banner-chars">
+                            <span class="char-emoji">🐸</span>
+                            <span class="char-emoji">🗿</span>
+                            <span class="char-emoji">🦄</span>
+                            <span class="char-emoji">🕺</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-name">Trenches Starter Pack</span>
+                        <div class="card-price-row">
+                            <span class="card-price"><span class="tbucks-icon">💎</span> 4,500</span>
+                            <button class="card-add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid items -->
+                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2d5a27 0%, #4a9e3f 100%);">
+                    <div class="card-character">
+                        <span class="char-emoji">🐸</span>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-name">Pepe</span>
+                        <div class="card-price-row">
+                            <span class="card-price"><span class="tbucks-icon">💎</span> 1,500</span>
+                            <button class="card-add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #d4145a 0%, #ff6b9d 100%);">
+                    <div class="card-badge featured">LEGENDARY</div>
+                    <div class="card-character">
+                        <span class="char-emoji">🕺</span>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-name">Ibiza Final Boss</span>
+                        <div class="card-price-row">
+                            <span class="card-price"><span class="tbucks-icon">💎</span> 3,000</span>
+                            <button class="card-add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #8B6914 0%, #E8C84A 100%);">
+                    <div class="card-character">
+                        <span class="char-emoji">🗿</span>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-name">Giga Chad</span>
+                        <div class="card-price-row">
+                            <span class="card-price"><span class="tbucks-icon">💎</span> 2,000</span>
+                            <button class="card-add-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <a href="/" class="footer-logo">OUR TRENCHES</a>
+            <div class="social-links">
+                <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+                <a href="https://x.com/thetrenchesgame" target="_blank" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://discord.gg/trenches" target="_blank" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.64 5.93h1.43v4.28h-1.43m3.93-4.28H17v4.28h-1.43M7 2L3.43 5.57v12.86h4.28V22l3.58-3.57h2.85L20.57 12V2m-1.43 9.29l-2.85 2.85h-2.86l-2.5 2.5v-2.5H7.71V3.43h11.43z"/></svg></a>
+                <a href="#" class="social-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Main</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="item-shop.html">Item Shop</a></li>
+                    <li><a href="#">Battle Pass</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Competitive</a></li>
+                    <li><a href="#">T-Bucks card</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Community guidelines</a></li>
+                    <li><a href="https://discord.gg/trenches" target="_blank">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Our Trenches. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Terms of service</a>
+                <a href="#">Privacy policy</a>
+            </div>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top &uarr;</button>
+        </div>
+    </footer>
+
+    <script>
+    // Item Shop interactions
+    document.addEventListener('DOMContentLoaded', () => {
+        // Row arrow scrolling
+        document.querySelectorAll('.row-arrow').forEach(arrow => {
+            arrow.addEventListener('click', () => {
+                const section = arrow.closest('.shop-section');
+                const track = section.querySelector('.shop-cards-track');
+                const cardWidth = track.querySelector('.shop-card').offsetWidth + 16;
+                const direction = arrow.classList.contains('left') ? -1 : 1;
+                track.scrollBy({ left: cardWidth * direction, behavior: 'smooth' });
+            });
+        });
+
+        // Section dot navigation
+        document.querySelectorAll('.section-dots .dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const sectionId = dot.dataset.section;
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                }
+            });
+        });
+
+        // Update active dot on scroll
+        const sections = document.querySelectorAll('.shop-section');
+        const dots = document.querySelectorAll('.section-dots .dot');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    dots.forEach(d => d.classList.remove('active'));
+                    const activeDot = document.querySelector(`.dot[data-section="${entry.target.id}"]`);
+                    if (activeDot) activeDot.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+        sections.forEach(s => observer.observe(s));
+
+        // Navbar scroll effect
+        const nav = document.querySelector('.main-nav');
+        window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 50 ? 'rgba(10, 22, 40, 0.98)' : 'rgba(10, 22, 40, 0.85)';
+        });
+
+        // Card hover effect
+        document.querySelectorAll('.shop-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

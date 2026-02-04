@@ -1,0 +1,418 @@
+/* ===== ITEM SHOP - Fortnite-Style Layout ===== */
+
+/* Page background - blue gradient like Fortnite */
+.item-shop-page {
+    background: linear-gradient(180deg, #0a1628 0%, #0f2847 30%, #163d6e 60%, #1a4a7a 100%);
+    min-height: 100vh;
+}
+
+.item-shop-page .main-nav {
+    background: rgba(10, 22, 40, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item-shop-page .nav-links li a.active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Shop Main Container */
+.shop-main {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 60px;
+    padding-right: 24px;
+    position: relative;
+}
+
+/* Shop Header */
+.shop-header {
+    margin-bottom: 40px;
+    padding-left: 16px;
+}
+
+.shop-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.shop-subtitle {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Section Navigation Sidebar */
+.shop-sidebar {
+    position: fixed;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.filter-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.section-dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px 8px;
+    border-radius: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dot.active {
+    background: #fff;
+    width: 12px;
+    height: 12px;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Shop Section */
+.shop-section {
+    margin-bottom: 48px;
+    scroll-margin-top: 100px;
+}
+
+/* Section Title - Bold italic uppercase like Fortnite */
+.section-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    text-transform: uppercase;
+}
+
+/* Shop Row - Horizontal scrollable */
+.shop-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.shop-cards-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 8px 16px 16px;
+    scroll-padding-left: 16px;
+}
+
+.shop-cards-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Row Navigation Arrows */
+.row-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.row-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.row-arrow.left {
+    left: -4px;
+}
+
+.row-arrow.right {
+    right: -4px;
+}
+
+/* ===== SHOP CARD - Fortnite Style ===== */
+.shop-card {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 340px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Badge */
+.card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 5;
+}
+
+.card-badge.new {
+    background: #f5f525;
+    color: #000;
+}
+
+.card-badge.featured {
+    background: #f5f525;
+    color: #000;
+}
+
+/* Card Character Area */
+.card-character {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.char-emoji {
+    font-size: 80px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    line-height: 1;
+}
+
+/* Card Info - Bottom Section */
+.card-info {
+    padding: 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-info .card-name {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.card-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tbucks-icon {
+    font-size: 14px;
+}
+
+.card-add-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.card-add-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ===== SHOP GRID - Mixed sizes like Fortnite ===== */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 8px 16px 16px;
+}
+
+/* Featured Banner Card - Spans 2 columns */
+.shop-card.featured-banner {
+    grid-column: span 2;
+    grid-row: span 1;
+    width: auto;
+    height: 340px;
+}
+
+.banner-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-chars {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.banner-chars .char-emoji {
+    font-size: 56px;
+}
+
+/* Grid cards auto-fill */
+.shop-grid .shop-card:not(.featured-banner) {
+    width: auto;
+}
+
+/* ===== FOOTER on item-shop page ===== */
+.item-shop-page .main-footer {
+    background: #070e1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .shop-main {
+        padding-left: 60px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .shop-card.featured-banner {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-sidebar {
+        display: none;
+    }
+
+    .shop-main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .shop-title {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .shop-card {
+        width: 200px;
+        height: 280px;
+    }
+
+    .char-emoji {
+        font-size: 60px;
+    }
+
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .shop-card.featured-banner {
+        grid-column: span 2;
+    }
+
+    .row-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-card {
+        width: 170px;
+        height: 240px;
+    }
+
+    .char-emoji {
+        font-size: 48px;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
