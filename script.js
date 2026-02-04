@@ -66,6 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = transforms.transform;
             card.style.opacity = transforms.opacity;
             card.style.zIndex = transforms.zIndex;
+
+            // Video playback control - play & unmute when centered
+            const video = card.querySelector('.card-video');
+            if (video) {
+                let relPos = position;
+                if (relPos > totalCards / 2) relPos -= totalCards;
+                if (relPos === 0) {
+                    video.play();
+                    video.muted = false;
+                } else {
+                    video.pause();
+                    video.muted = true;
+                }
+            }
         });
     }
 
