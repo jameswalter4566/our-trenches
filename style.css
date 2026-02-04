@@ -286,31 +286,23 @@ body {
     }
 }
 
-.hero-trenches-title {
-    font-family: 'Stencil WW II', 'Impact', sans-serif;
-    font-size: 200px;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    color: #000;
-    text-align: center;
-    width: 100%;
-    line-height: 0.9;
-    margin-bottom: 12px;
+.hero-trenches-logo {
+    width: 700px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
 }
 
 @media (max-width: 1023px) {
-    .hero-trenches-title {
-        font-size: 110px;
-        letter-spacing: 6px;
+    .hero-trenches-logo {
+        width: 450px;
     }
 }
 
 @media (max-width: 767px) {
-    .hero-trenches-title {
-        font-size: 60px;
-        letter-spacing: 3px;
+    .hero-trenches-logo {
+        width: 300px;
     }
 }
 
