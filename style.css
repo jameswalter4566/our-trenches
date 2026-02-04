@@ -59,6 +59,7 @@ body {
     color: var(--text-primary);
     line-height: 1.5;
     overflow-x: hidden;
+    zoom: 0.95;
 }
 
 /* ===== NAVIGATION ===== */
