@@ -291,18 +291,20 @@ body {
     max-width: 95%;
     height: auto;
     display: block;
-    margin: 0 auto 12px;
+    margin: -200px auto -200px;
 }
 
 @media (max-width: 1023px) {
     .hero-trenches-logo {
         width: 1600px;
+        margin: -100px auto -100px;
     }
 }
 
 @media (max-width: 767px) {
     .hero-trenches-logo {
         width: 1000px;
+        margin: -60px auto -60px;
     }
 }
 
