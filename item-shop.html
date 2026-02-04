@@ -8,9 +8,6 @@
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="item-shop.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body class="item-shop-page">
     <!-- Navigation -->
@@ -48,254 +45,547 @@
     </nav>
 
     <!-- Item Shop Content -->
-    <main class="shop-main">
-        <!-- Shop Header -->
-        <div class="shop-header">
-            <h1 class="shop-title">ITEM SHOP</h1>
-            <p class="shop-subtitle">Powered by the Trenches Store</p>
-        </div>
+    <section id="item-shop" class="shop-wrapper">
+        <main>
+            <div class="shop-layout">
+                <!-- Sidebar Navigation -->
+                <div class="shop-sidebar">
+                    <div class="sidebar-inner">
+                        <nav class="sidebar-dots-nav">
+                            <div class="dots-list">
+                                <div class="dot-item active" data-section="section-hot">
+                                    <div class="dot-circle"></div>
+                                </div>
+                                <div class="dot-item" data-section="section-drops">
+                                    <div class="dot-circle"></div>
+                                </div>
+                                <div class="dot-item" data-section="section-legendary">
+                                    <div class="dot-circle"></div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
 
-        <!-- Section Navigation Sidebar -->
-        <div class="shop-sidebar">
-            <button class="filter-btn" title="Filter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="4" y1="6" x2="20" y2="6"></line>
-                    <line x1="8" y1="12" x2="20" y2="12"></line>
-                    <line x1="12" y1="18" x2="20" y2="18"></line>
-                </svg>
-            </button>
-            <div class="section-dots">
-                <span class="dot active" data-section="hot-items"></span>
-                <span class="dot" data-section="trenches-drops"></span>
-                <span class="dot" data-section="legendary"></span>
+                <!-- Content Area -->
+                <div class="shop-content">
+                    <!-- Header -->
+                    <div class="shop-header">
+                        <h1 class="shop-title">Item Shop</h1>
+                    </div>
+
+                    <!-- Sections Container -->
+                    <div>
+                        <!-- Section 1: Today's Hot Items -->
+                        <div class="shop-section" id="section-hot">
+                            <h2 class="section-title">Today's Hot Items</h2>
+                            <div class="shop-row">
+                                <div class="shop-cards-grid">
+                                    <!-- Pepe -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(46, 125, 50) 0%, rgba(46, 125, 50, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Pepe</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        1,500
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(144, 238, 144), rgb(76, 175, 80), rgb(46, 125, 50));"></div>
+                                                            <span class="card-char-emoji">🐸</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Giga Chad -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(117, 56, 10) 0%, rgba(117, 56, 10, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Giga Chad</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        2,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(243, 213, 19), rgb(194, 143, 17), rgb(117, 56, 10));"></div>
+                                                            <span class="card-char-emoji">🗿</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Chill Guy -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(89, 62, 170) 0%, rgba(89, 62, 170, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Chill Guy</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        1,200
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(155, 154, 196), rgb(89, 62, 170));"></div>
+                                                            <span class="card-char-emoji">😎</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Shiba Inu -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(149, 101, 58) 0%, rgba(149, 101, 58, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Shiba Inu</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        1,800
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(239, 214, 188), rgb(205, 168, 135), rgb(149, 101, 58));"></div>
+                                                            <span class="card-char-emoji">🐕</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- The General -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(129, 80, 214) 0%, rgba(129, 80, 214, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">The General</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        2,500
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(200, 170, 240), rgb(129, 80, 214));"></div>
+                                                            <span class="card-char-emoji">🎖️</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Arrow Buttons -->
+                                <div class="row-arrows">
+                                    <button class="row-arrow disabled" data-dir="left">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.7073 4.74675C13.0587 4.39529 13.6286 4.39529 13.98 4.74675L15.8892 6.6559C16.2407 7.00737 16.2407 7.57722 15.8892 7.92869L11.8166 12.0012L15.8892 16.0737C16.2407 16.4252 16.2407 16.995 15.8892 17.3465L13.98 19.2557C13.6286 19.6071 13.0587 19.6071 12.7073 19.2557L5.45264 12.0012L12.7073 4.74675Z"></path></svg>
+                                    </button>
+                                    <button class="row-arrow" data-dir="right">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.2927 19.2533C10.9413 19.6047 10.3714 19.6047 10.02 19.2533L8.11083 17.3441C7.75937 16.9926 7.75937 16.4228 8.11083 16.0713L12.1834 11.9988L8.11083 7.92631C7.75937 7.57484 7.75937 7.00499 8.11083 6.65352L10.02 4.74434C10.3714 4.39288 10.9413 4.39288 11.2927 4.74434L18.5474 11.9988L11.2927 19.2533Z"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Trenches Drops -->
+                        <div class="shop-section" id="section-drops">
+                            <h2 class="section-title">Trenches Drops</h2>
+                            <div class="shop-row">
+                                <div class="shop-cards-grid">
+                                    <!-- Unicorn Fart Dust -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(156, 39, 176) 0%, rgba(156, 39, 176, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Unicorn Fart Dust</div>
+                                                            <div class="card-subtitle">Emote - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        2,200
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(231, 140, 186), rgb(199, 81, 151));"></div>
+                                                            <span class="card-char-emoji">🦄</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ibiza Final Boss -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(117, 56, 10) 0%, rgba(117, 56, 10, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Ibiza Final Boss</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        3,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(243, 213, 19), rgb(194, 143, 17), rgb(117, 56, 10));"></div>
+                                                            <span class="card-char-emoji">🕺</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Labubu -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(89, 62, 170) 0%, rgba(89, 62, 170, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Labubu</div>
+                                                            <div class="card-subtitle">Toy - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        1,600
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(155, 154, 196), rgb(89, 62, 170));"></div>
+                                                            <span class="card-char-emoji">👾</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- The Nihilist Penguin -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(30, 40, 80) 0%, rgba(30, 40, 80, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">The Nihilist Penguin</div>
+                                                            <div class="card-subtitle">Outfit - Trenches Style</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        1,400
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(100, 120, 180), rgb(30, 40, 80));"></div>
+                                                            <span class="card-char-emoji">🐧</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Arrow Buttons -->
+                                <div class="row-arrows">
+                                    <button class="row-arrow disabled" data-dir="left">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.7073 4.74675C13.0587 4.39529 13.6286 4.39529 13.98 4.74675L15.8892 6.6559C16.2407 7.00737 16.2407 7.57722 15.8892 7.92869L11.8166 12.0012L15.8892 16.0737C16.2407 16.4252 16.2407 16.995 15.8892 17.3465L13.98 19.2557C13.6286 19.6071 13.0587 19.6071 12.7073 19.2557L5.45264 12.0012L12.7073 4.74675Z"></path></svg>
+                                    </button>
+                                    <button class="row-arrow" data-dir="right">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.2927 19.2533C10.9413 19.6047 10.3714 19.6047 10.02 19.2533L8.11083 17.3441C7.75937 16.9926 7.75937 16.4228 8.11083 16.0713L12.1834 11.9988L8.11083 7.92631C7.75937 7.57484 7.75937 7.00499 8.11083 6.65352L10.02 4.74434C10.3714 4.39288 10.9413 4.39288 11.2927 4.74434L18.5474 11.9988L11.2927 19.2533Z"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Legendary Collection -->
+                        <div class="shop-section" id="section-legendary">
+                            <h2 class="section-title">Legendary Collection</h2>
+                            <div class="shop-row">
+                                <div class="shop-cards-grid">
+                                    <!-- Pepe (Legendary) -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(117, 56, 10) 0%, rgba(117, 56, 10, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Pepe</div>
+                                                            <div class="card-subtitle">Legendary Outfit</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        3,500
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(243, 213, 19), rgb(194, 143, 17), rgb(117, 56, 10));"></div>
+                                                            <span class="card-char-emoji">🐸</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ibiza Final Boss (Legendary) -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(117, 56, 10) 0%, rgba(117, 56, 10, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Ibiza Final Boss</div>
+                                                            <div class="card-subtitle">Legendary Outfit</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        4,000
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(243, 213, 19), rgb(194, 143, 17), rgb(117, 56, 10));"></div>
+                                                            <span class="card-char-emoji">🕺</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Giga Chad (Legendary) -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(129, 80, 214) 0%, rgba(129, 80, 214, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Giga Chad</div>
+                                                            <div class="card-subtitle">Legendary Outfit</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        3,800
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(200, 170, 240), rgb(129, 80, 214));"></div>
+                                                            <span class="card-char-emoji">🗿</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Unicorn Fart Dust (Legendary) -->
+                                    <div class="card-wrapper">
+                                        <div class="card-outer">
+                                            <a href="#" class="card-link">
+                                                <div class="card-overlay">
+                                                    <div class="card-top"></div>
+                                                    <div class="card-info-wrapper">
+                                                        <div class="card-info-gradient" style="background-image: linear-gradient(0deg, rgb(156, 39, 176) 0%, rgba(156, 39, 176, 0) 100%);"></div>
+                                                        <div class="card-info-content">
+                                                            <div class="card-name">Unicorn Fart Dust</div>
+                                                            <div class="card-subtitle">Legendary Emote</div>
+                                                            <div class="card-price-row">
+                                                                <div class="card-price">
+                                                                    <span class="card-price-label">T-Bucks Price</span>
+                                                                    <span class="card-price-value">
+                                                                        <span class="tbucks-icon"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM10.1051 7.5H6L9.31376 16.5H14.6306L18 7.5H13.8887L12.0896 13.7038L12.0031 14.0427H11.9784L11.9042 13.7038L10.1051 7.5Z"></path></svg></span>
+                                                                        2,800
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-bg">
+                                                    <div class="card-bg-inner">
+                                                        <span class="card-bg-image-container">
+                                                            <div class="card-bg-gradient" style="background: linear-gradient(rgb(231, 140, 186), rgb(199, 81, 151));"></div>
+                                                            <span class="card-char-emoji">🦄</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Arrow Buttons -->
+                                <div class="row-arrows">
+                                    <button class="row-arrow disabled" data-dir="left">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.7073 4.74675C13.0587 4.39529 13.6286 4.39529 13.98 4.74675L15.8892 6.6559C16.2407 7.00737 16.2407 7.57722 15.8892 7.92869L11.8166 12.0012L15.8892 16.0737C16.2407 16.4252 16.2407 16.995 15.8892 17.3465L13.98 19.2557C13.6286 19.6071 13.0587 19.6071 12.7073 19.2557L5.45264 12.0012L12.7073 4.74675Z"></path></svg>
+                                    </button>
+                                    <button class="row-arrow" data-dir="right">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.2927 19.2533C10.9413 19.6047 10.3714 19.6047 10.02 19.2533L8.11083 17.3441C7.75937 16.9926 7.75937 16.4228 8.11083 16.0713L12.1834 11.9988L8.11083 7.92631C7.75937 7.57484 7.75937 7.00499 8.11083 6.65352L10.02 4.74434C10.3714 4.39288 10.9413 4.39288 11.2927 4.74434L18.5474 11.9988L11.2927 19.2533Z"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Section 1: Today's Hot Items -->
-        <section class="shop-section" id="hot-items">
-            <h2 class="section-title">TODAY'S HOT ITEMS</h2>
-            <div class="shop-row">
-                <button class="row-arrow left" data-row="hot-items">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
-                <div class="shop-cards-track">
-                    <!-- Pepe -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2d5a27 0%, #4a9e3f 50%, #7ed957 100%);">
-                        <div class="card-badge new">NEW!</div>
-                        <div class="card-character">
-                            <span class="char-emoji">🐸</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Pepe</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,500</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Giga Chad -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #8B6914 0%, #C5A028 50%, #E8C84A 100%);">
-                        <div class="card-character">
-                            <span class="char-emoji">🗿</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Giga Chad</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,000</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chill Guy -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #1a4a6e 0%, #2980b9 50%, #5dade2 100%);">
-                        <div class="card-character">
-                            <span class="char-emoji">😎</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Chill Guy</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,200</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shiba Inu -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #b35900 0%, #e67e22 50%, #f5b041 100%);">
-                        <div class="card-badge featured">FEATURED</div>
-                        <div class="card-character">
-                            <span class="char-emoji">🐕</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Shiba Inu</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,800</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- The General -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2c3e1a 0%, #4a6b2a 50%, #6b8e3a 100%);">
-                        <div class="card-character">
-                            <span class="char-emoji">🎖️</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">The General</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,500</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="row-arrow right" data-row="hot-items">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-            </div>
-        </section>
-
-        <!-- Section 2: Trenches Drops -->
-        <section class="shop-section" id="trenches-drops">
-            <h2 class="section-title">TRENCHES DROPS</h2>
-            <div class="shop-row">
-                <button class="row-arrow left" data-row="trenches-drops">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
-                <div class="shop-cards-track">
-                    <!-- Unicorn Fart Dust -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #ff6fd8 0%, #c471ed 50%, #7c83ff 100%);">
-                        <div class="card-badge new">NEW!</div>
-                        <div class="card-character">
-                            <span class="char-emoji">🦄</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Unicorn Fart Dust</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 2,200</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ibiza Final Boss -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #d4145a 0%, #ff2a6d 50%, #ff6b9d 100%);">
-                        <div class="card-badge featured">LEGENDARY</div>
-                        <div class="card-character">
-                            <span class="char-emoji">🕺</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Ibiza Final Boss</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 3,000</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Labubu -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #4a0e78 0%, #7b2fbe 50%, #a855f7 100%);">
-                        <div class="card-character">
-                            <span class="char-emoji">👾</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">Labubu</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,600</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- The Nihilist Penguin -->
-                    <div class="shop-card" style="--card-bg: linear-gradient(135deg, #0c1445 0%, #1a2980 50%, #3a5ba0 100%);">
-                        <div class="card-character">
-                            <span class="char-emoji">🐧</span>
-                        </div>
-                        <div class="card-info">
-                            <span class="card-name">The Nihilist Penguin</span>
-                            <div class="card-price-row">
-                                <span class="card-price"><span class="tbucks-icon">💎</span> 1,400</span>
-                                <button class="card-add-btn">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="row-arrow right" data-row="trenches-drops">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-            </div>
-        </section>
-
-        <!-- Section 3: Legendary Collection -->
-        <section class="shop-section" id="legendary">
-            <h2 class="section-title">LEGENDARY COLLECTION</h2>
-            <div class="shop-grid">
-                <!-- Featured Banner -->
-                <div class="shop-card featured-banner" style="--card-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);">
-                    <div class="card-badge featured">BUNDLE - SAVE 40%</div>
-                    <div class="banner-content">
-                        <div class="banner-chars">
-                            <span class="char-emoji">🐸</span>
-                            <span class="char-emoji">🗿</span>
-                            <span class="char-emoji">🦄</span>
-                            <span class="char-emoji">🕺</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-name">Trenches Starter Pack</span>
-                        <div class="card-price-row">
-                            <span class="card-price"><span class="tbucks-icon">💎</span> 4,500</span>
-                            <button class="card-add-btn">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grid items -->
-                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #2d5a27 0%, #4a9e3f 100%);">
-                    <div class="card-character">
-                        <span class="char-emoji">🐸</span>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-name">Pepe</span>
-                        <div class="card-price-row">
-                            <span class="card-price"><span class="tbucks-icon">💎</span> 1,500</span>
-                            <button class="card-add-btn">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #d4145a 0%, #ff6b9d 100%);">
-                    <div class="card-badge featured">LEGENDARY</div>
-                    <div class="card-character">
-                        <span class="char-emoji">🕺</span>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-name">Ibiza Final Boss</span>
-                        <div class="card-price-row">
-                            <span class="card-price"><span class="tbucks-icon">💎</span> 3,000</span>
-                            <button class="card-add-btn">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="shop-card" style="--card-bg: linear-gradient(135deg, #8B6914 0%, #E8C84A 100%);">
-                    <div class="card-character">
-                        <span class="char-emoji">🗿</span>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-name">Giga Chad</span>
-                        <div class="card-price-row">
-                            <span class="card-price"><span class="tbucks-icon">💎</span> 2,000</span>
-                            <button class="card-add-btn">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </main>
+    </section>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -346,27 +636,27 @@
     </footer>
 
     <script>
-    // Item Shop interactions
     document.addEventListener('DOMContentLoaded', () => {
-        // Row arrow scrolling
+        // Slider arrow functionality
         document.querySelectorAll('.row-arrow').forEach(arrow => {
             arrow.addEventListener('click', () => {
-                const section = arrow.closest('.shop-section');
-                const track = section.querySelector('.shop-cards-track');
-                const cardWidth = track.querySelector('.shop-card').offsetWidth + 16;
-                const direction = arrow.classList.contains('left') ? -1 : 1;
-                track.scrollBy({ left: cardWidth * direction, behavior: 'smooth' });
+                if (arrow.classList.contains('disabled')) return;
+                const row = arrow.closest('.shop-row');
+                const grid = row.querySelector('.shop-cards-grid');
+                const cardWidth = grid.querySelector('.card-wrapper').offsetWidth;
+                const dir = arrow.dataset.dir === 'left' ? -1 : 1;
+                grid.scrollBy({ left: cardWidth * dir, behavior: 'smooth' });
             });
         });
 
-        // Section dot navigation
-        document.querySelectorAll('.section-dots .dot').forEach(dot => {
+        // Sidebar dot navigation
+        document.querySelectorAll('.dot-item').forEach(dot => {
             dot.addEventListener('click', () => {
                 const sectionId = dot.dataset.section;
                 const section = document.getElementById(sectionId);
                 if (section) {
                     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+                    document.querySelectorAll('.dot-item').forEach(d => d.classList.remove('active'));
                     dot.classList.add('active');
                 }
             });
@@ -374,12 +664,12 @@
 
         // Update active dot on scroll
         const sections = document.querySelectorAll('.shop-section');
-        const dots = document.querySelectorAll('.section-dots .dot');
+        const dots = document.querySelectorAll('.dot-item');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     dots.forEach(d => d.classList.remove('active'));
-                    const activeDot = document.querySelector(`.dot[data-section="${entry.target.id}"]`);
+                    const activeDot = document.querySelector(`.dot-item[data-section="${entry.target.id}"]`);
                     if (activeDot) activeDot.classList.add('active');
                 }
             });
@@ -390,16 +680,6 @@
         const nav = document.querySelector('.main-nav');
         window.addEventListener('scroll', () => {
             nav.style.background = window.scrollY > 50 ? 'rgba(10, 22, 40, 0.98)' : 'rgba(10, 22, 40, 0.85)';
-        });
-
-        // Card hover effect
-        document.querySelectorAll('.shop-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
         });
     });
     </script>
