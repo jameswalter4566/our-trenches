@@ -240,28 +240,112 @@ body {
 .epic-download-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background: #2a2a2a;
+    gap: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
     color: #fff;
-    padding: 16px 32px;
-    border-radius: 8px;
+    padding: 22px 48px;
+    border-radius: 16px;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 60px rgba(37, 99, 235, 0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.epic-download-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transform: translateX(-100%);
+    animation: btnShimmer 3s ease-in-out infinite;
+}
+
+@keyframes btnShimmer {
+    0% { transform: translateX(-100%); }
+    50%, 100% { transform: translateX(100%); }
 }
 
 .epic-download-btn:hover {
-    background: #3a3a3a;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #222 0%, #111 50%, #222 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 80px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
 }
 
-.epic-btn-logo {
-    width: 40px;
-    height: auto;
-    border-radius: 4px;
+.epic-btn-icon {
+    flex-shrink: 0;
+}
+
+.epic-btn-icon svg {
+    width: 52px;
+    height: 52px;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(255,255,255,0.15));
+}
+
+.epic-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.epic-btn-label {
+    font-family: 'HeadingNowVariable', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.epic-btn-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+}
+
+.epic-btn-arrow {
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.epic-btn-arrow svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.epic-download-btn:hover .epic-btn-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+    .epic-download-btn {
+        padding: 16px 28px;
+        gap: 14px;
+        border-radius: 12px;
+    }
+    .epic-btn-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    .epic-btn-label {
+        font-size: 18px;
+    }
+    .epic-btn-sub {
+        font-size: 11px;
+    }
+    .epic-btn-arrow svg {
+        width: 22px;
+        height: 22px;
+    }
 }
 
 /* ===== 3D CAROUSEL - EXACT IPODOTRUN REPLICA ===== */
