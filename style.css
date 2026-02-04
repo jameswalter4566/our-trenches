@@ -287,8 +287,8 @@ body {
 }
 
 .hero-trenches-logo {
-    width: 1400px;
-    max-width: 90%;
+    width: 2800px;
+    max-width: 95%;
     height: auto;
     display: block;
     margin: 0 auto 12px;
@@ -296,13 +296,13 @@ body {
 
 @media (max-width: 1023px) {
     .hero-trenches-logo {
-        width: 800px;
+        width: 1600px;
     }
 }
 
 @media (max-width: 767px) {
     .hero-trenches-logo {
-        width: 500px;
+        width: 1000px;
     }
 }
 
