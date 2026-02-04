@@ -185,7 +185,7 @@
             </div>
             <div class="card-bg">
                 <div class="card-bg-inner">
-                    <span class="card-bg-image-container">
+                    <span class="card-bg-image-container" style="background:${item.bg};">
                         <img class="card-char-img" src="${item.img}" alt="${item.name}" loading="lazy" ${imgStyle(item.type, isJam)}>
                     </span>
                 </div>
@@ -209,6 +209,7 @@
 </div>`;
         }
 
+        // Info overlay gradients (bottom fade)
         const G1 = 'linear-gradient(0deg, #95653A 0%, rgba(149,101,58,0) 100%)';
         const G2 = 'linear-gradient(0deg, #593EAA 0%, rgba(89,62,170,0) 100%)';
         const G3 = 'linear-gradient(0deg, #75380A 0%, rgba(117,56,10,0) 100%)';
@@ -222,163 +223,178 @@
         const G11 = 'linear-gradient(0deg, #060f48 0%, rgba(6,15,72,0) 100%)';
         const G12 = 'linear-gradient(0deg, #340d01ff 0%, rgba(52,13,1,0) 100%)';
 
+        // Card background gradients (full card rarity color)
+        const BG1 = 'linear-gradient(rgb(239,214,188), rgb(205,168,135), rgb(149,101,58))'; // tan
+        const BG2 = 'linear-gradient(rgb(155,154,196), rgb(89,62,170))'; // epic purple
+        const BG3 = 'linear-gradient(rgb(243,213,19), rgb(194,143,17), rgb(117,56,10))'; // legendary gold
+        const BG4 = 'linear-gradient(rgb(200,170,240), rgb(129,80,214))'; // epic pink/purple
+        const BG5 = 'linear-gradient(rgb(130,192,245), rgb(78,148,217))'; // gaming legends blue
+        const BG6 = 'linear-gradient(rgb(80,160,240), rgb(0,82,192))'; // collab blue
+        const BG7 = 'linear-gradient(rgb(80,160,240), rgb(0,82,192))'; // collab blue
+        const BG8 = 'linear-gradient(rgb(120,170,220), rgb(31,98,166))'; // rare blue
+        const BG9 = 'linear-gradient(rgb(50,30,100), rgb(10,2,38))'; // DC dark
+        const BG10 = 'linear-gradient(rgb(80,220,200), rgb(22,167,144))'; // South Park teal
+        const BG11 = 'linear-gradient(rgb(30,50,120), rgb(6,15,72))'; // dark navy
+        const BG12 = 'linear-gradient(rgb(120,60,20), rgb(52,13,1))'; // vehicle brown
+        const BG_PINK = 'linear-gradient(rgb(231,140,186), rgb(199,81,151))'; // pink series
+
         const sections = [];
 
         // Section 0: Today's Best Sellers
         sections.push(makeSection(0, "Today's Best Sellers", [
-            {name:"Chani",type:"Outfit",price:"1,500",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"},
-            {name:"Human Bill",type:"Outfit",price:"1,800",grad:G2,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_175_athena_commando_m_aliensummer/featured.png"},
-            {name:"Billy Bounce",type:"Emote",price:"500",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/eid_billybounce/featured.png"},
-            {name:"The Best Cat",type:"Sidekick",price:"1,200",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/companion_flourcut/featured.png",badge:"Customizable!"},
-            {name:"Regular Show Bundle",type:"Bundle",price:"6,100",grad:G5,img:"https://fortnite-api.com/images/cosmetics/br/character_vouchtrig/featured.png",badge:"2,700 V-Bucks off"},
-            {name:"Gummi Team Leader",type:"Outfit",price:"1,200",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/character_sweetcuddle/icon.png"},
-            {name:"Starflare",type:"Outfit",price:"1,500",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/cid_808_athena_commando_f_constellationsun/featured.png"},
-            {name:"Hank Hill Bundle",type:"Bundle",price:"3,500",grad:G6,img:"https://fortnite-api.com/images/cosmetics/br/character_hedgesprig/featured.png",badge:"1,500 V-Bucks off"},
-            {name:"Reaper",type:"Pickaxe",price:"800",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/halloweenscythe/icon.png"},
-            {name:"Gummy Fishstick",type:"Outfit",price:"1,200",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_226_athena_commando_m_sweetteriyakired/featured.png"}
+            {name:"Chani",type:"Outfit",price:"1,500",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"},
+            {name:"Human Bill",type:"Outfit",price:"1,800",grad:G2,bg:BG2,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_175_athena_commando_m_aliensummer/featured.png"},
+            {name:"Billy Bounce",type:"Emote",price:"500",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/eid_billybounce/featured.png"},
+            {name:"The Best Cat",type:"Sidekick",price:"1,200",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/companion_flourcut/featured.png",badge:"Customizable!"},
+            {name:"Regular Show Bundle",type:"Bundle",price:"6,100",grad:G5,bg:BG5,img:"https://fortnite-api.com/images/cosmetics/br/character_vouchtrig/featured.png",badge:"2,700 V-Bucks off"},
+            {name:"Gummi Team Leader",type:"Outfit",price:"1,200",grad:G4,bg:BG4,img:"https://fortnite-api.com/images/cosmetics/br/character_sweetcuddle/icon.png"},
+            {name:"Starflare",type:"Outfit",price:"1,500",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/cid_808_athena_commando_f_constellationsun/featured.png"},
+            {name:"Hank Hill Bundle",type:"Bundle",price:"3,500",grad:G6,bg:BG6,img:"https://fortnite-api.com/images/cosmetics/br/character_hedgesprig/featured.png",badge:"1,500 V-Bucks off"},
+            {name:"Reaper",type:"Pickaxe",price:"800",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/halloweenscythe/icon.png"},
+            {name:"Gummy Fishstick",type:"Outfit",price:"1,200",grad:G4,bg:BG4,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_226_athena_commando_m_sweetteriyakired/featured.png"}
         ]));
 
         // Section 1: Fortnite Drops
         sections.push(makeSection(1, "Fortnite Drops", [
-            {name:"Nike Shox R4 'Pink Paint Runners'",type:"Kicks",price:"800",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/shoes_breathtaleyarrow/featured.png",badge:"NEW!"},
-            {name:"Alistair Chews",type:"Outfit",price:"800",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/character_gumoutlaw/featured.png"},
-            {name:"Bubble Burster",type:"Pickaxe",price:"500",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_gumoutlaw/featured.png"},
-            {name:"Gummi Team Leader",type:"Outfit",price:"1,200",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/character_sweetcuddle/icon.png"},
-            {name:"Doggo Jr.",type:"Sidekick",price:"1,500",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/companion_widesnore/featured.png"},
-            {name:"Doggo",type:"Outfit",price:"1,500",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/cid_419_athena_commando_m_pug/featured.png"},
-            {name:"Penny",type:"Outfit",price:"1,200",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/cid_719_athena_commando_f_blonde/featured.png"},
-            {name:"Megabat",type:"Glider",price:"800",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/glider_id_154_glowbrobat/featured.png"},
-            {name:"Stealth",type:"Glider",price:"500",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
-            {name:"Fated Arcana",type:"Wrap",price:"500",grad:G4,img:"https://fortnite-api.com/images/cosmetics/br/wrap_veiledseer/featured.png"}
+            {name:"Nike Shox R4 'Pink Paint Runners'",type:"Kicks",price:"800",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/shoes_breathtaleyarrow/featured.png",badge:"NEW!"},
+            {name:"Alistair Chews",type:"Outfit",price:"800",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/character_gumoutlaw/featured.png"},
+            {name:"Bubble Burster",type:"Pickaxe",price:"500",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_gumoutlaw/featured.png"},
+            {name:"Gummi Team Leader",type:"Outfit",price:"1,200",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/character_sweetcuddle/icon.png"},
+            {name:"Doggo Jr.",type:"Sidekick",price:"1,500",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/companion_widesnore/featured.png"},
+            {name:"Doggo",type:"Outfit",price:"1,500",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/cid_419_athena_commando_m_pug/featured.png"},
+            {name:"Penny",type:"Outfit",price:"1,200",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/cid_719_athena_commando_f_blonde/featured.png"},
+            {name:"Megabat",type:"Glider",price:"800",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/glider_id_154_glowbrobat/featured.png"},
+            {name:"Stealth",type:"Glider",price:"500",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
+            {name:"Fated Arcana",type:"Wrap",price:"500",grad:G4,bg:BG_PINK,img:"https://fortnite-api.com/images/cosmetics/br/wrap_veiledseer/featured.png"}
         ]));
 
         // Section 2: Dune
         sections.push(makeSection(2, "Dune", [
-            {name:"Chani",type:"Outfit",price:"1,500",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"},
-            {name:"Paul Atreides",type:"Outfit",price:"1,500",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_216_athena_commando_m_sunrisepalace_bbqy0/featured.png"},
-            {name:"Twinblades",type:"Pickaxe",price:"500",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_id_694_sunrisepalace1h_sdi6m/featured.png"},
-            {name:"Chani's Satchel",type:"Back Bling",price:"300",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/bid_875_sunrisecastle_91j3l/icon.png"}
+            {name:"Chani",type:"Outfit",price:"1,500",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"},
+            {name:"Paul Atreides",type:"Outfit",price:"1,500",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_216_athena_commando_m_sunrisepalace_bbqy0/featured.png"},
+            {name:"Twinblades",type:"Pickaxe",price:"500",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_id_694_sunrisepalace1h_sdi6m/featured.png"},
+            {name:"Chani's Satchel",type:"Back Bling",price:"300",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/bid_875_sunrisecastle_91j3l/icon.png"}
         ]));
 
         // Section 3: Regular Show
         sections.push(makeSection(3, "Regular Show", [
-            {name:"Mordecai",type:"Outfit",price:"1,500",grad:G5,img:"https://fortnite-api.com/images/cosmetics/br/character_vouchtrig/featured.png"},
-            {name:"Rigby",type:"Sidekick",price:"1,500",grad:G5,img:"https://fortnite-api.com/images/cosmetics/br/companion_promdutch/featured.png"},
-            {name:"Skips' Skip",type:"Emote",price:"400",grad:G5,img:"https://fortnite-api.com/images/cosmetics/br/eid_robusttorn/featured.png"}
+            {name:"Mordecai",type:"Outfit",price:"1,500",grad:G5,bg:BG5,img:"https://fortnite-api.com/images/cosmetics/br/character_vouchtrig/featured.png"},
+            {name:"Rigby",type:"Sidekick",price:"1,500",grad:G5,bg:BG5,img:"https://fortnite-api.com/images/cosmetics/br/companion_promdutch/featured.png"},
+            {name:"Skips' Skip",type:"Emote",price:"400",grad:G5,bg:BG5,img:"https://fortnite-api.com/images/cosmetics/br/eid_robusttorn/featured.png"}
         ]));
 
         // Section 4: Animated Dads
         sections.push(makeSection(4, "Animated Dads", [
-            {name:"Bob Belcher",type:"Outfit",price:"1,500",grad:G6,img:"https://fortnite-api.com/images/cosmetics/br/character_cyclopsprey/featured.png"},
-            {name:"Bob's Happy Dance",type:"Emote",price:"400",grad:G6,img:"https://fortnite-api.com/images/cosmetics/br/eid_cyclopsprey_sizzle/featured.png"},
-            {name:"Hank Hill",type:"Outfit",price:"1,500",grad:G6,img:"https://fortnite-api.com/images/cosmetics/br/character_hedgesprig/featured.png"}
+            {name:"Bob Belcher",type:"Outfit",price:"1,500",grad:G6,bg:BG6,img:"https://fortnite-api.com/images/cosmetics/br/character_cyclopsprey/featured.png"},
+            {name:"Bob's Happy Dance",type:"Emote",price:"400",grad:G6,bg:BG6,img:"https://fortnite-api.com/images/cosmetics/br/eid_cyclopsprey_sizzle/featured.png"},
+            {name:"Hank Hill",type:"Outfit",price:"1,500",grad:G6,bg:BG6,img:"https://fortnite-api.com/images/cosmetics/br/character_hedgesprig/featured.png"}
         ]));
 
         // Section 5: Family Guy
         sections.push(makeSection(5, "Family Guy", [
-            {name:"The Giant Chicken",type:"Outfit",price:"1,500",grad:G7,img:"https://fortnite-api.com/images/cosmetics/br/character_fastcheetah/featured.png"},
-            {name:"Drumsticks",type:"Pickaxe",price:"800",grad:G7,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_fastcheetah/featured.png"},
-            {name:"Peter Griffin Speed Bag",type:"Emote",price:"500",grad:G7,img:"https://fortnite-api.com/images/cosmetics/br/eid_fastcheetah/featured.png"}
+            {name:"The Giant Chicken",type:"Outfit",price:"1,500",grad:G7,bg:BG7,img:"https://fortnite-api.com/images/cosmetics/br/character_fastcheetah/featured.png"},
+            {name:"Drumsticks",type:"Pickaxe",price:"800",grad:G7,bg:BG7,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_fastcheetah/featured.png"},
+            {name:"Peter Griffin Speed Bag",type:"Emote",price:"500",grad:G7,bg:BG7,img:"https://fortnite-api.com/images/cosmetics/br/eid_fastcheetah/featured.png"}
         ]));
 
         // Section 6: Pacific Break
         sections.push(makeSection(6, "Pacific Break", [
-            {name:"Human Bill",type:"Outfit",price:"1,800",grad:G2,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_175_athena_commando_m_aliensummer/featured.png"},
-            {name:"Freezie Friendz",type:"Pickaxe",price:"500",grad:G2,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_id_643_aliensummermale/featured.png"}
+            {name:"Human Bill",type:"Outfit",price:"1,800",grad:G2,bg:BG2,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_175_athena_commando_m_aliensummer/featured.png"},
+            {name:"Freezie Friendz",type:"Pickaxe",price:"500",grad:G2,bg:BG2,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_id_643_aliensummermale/featured.png"}
         ]));
 
         // Section 7: No Sweat
         sections.push(makeSection(7, "No Sweat", [
-            {name:"Dominator",type:"Outfit",price:"800",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_041_athena_commando_f_district/featured.png"},
-            {name:"Manic",type:"Outfit",price:"800",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_546_athena_commando_f_tacticalred/featured.png"},
-            {name:"Par Patroller",type:"Outfit",price:"800",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_801_athena_commando_f_golfsummer/featured.png"},
-            {name:"Power Chord",type:"Outfit",price:"2,000",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_097_athena_commando_f_rockerpunk/featured.png"},
-            {name:"Focus",type:"Outfit",price:"1,200",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_452_athena_commando_f_cyberfu/featured.png"},
-            {name:"Aura",type:"Outfit",price:"800",grad:G8,img:"https://fortnite-api.com/images/cosmetics/br/cid_397_athena_commando_f_treasurehunterfashion/featured.png"}
+            {name:"Dominator",type:"Outfit",price:"800",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_041_athena_commando_f_district/featured.png"},
+            {name:"Manic",type:"Outfit",price:"800",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_546_athena_commando_f_tacticalred/featured.png"},
+            {name:"Par Patroller",type:"Outfit",price:"800",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_801_athena_commando_f_golfsummer/featured.png"},
+            {name:"Power Chord",type:"Outfit",price:"2,000",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_097_athena_commando_f_rockerpunk/featured.png"},
+            {name:"Focus",type:"Outfit",price:"1,200",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_452_athena_commando_f_cyberfu/featured.png"},
+            {name:"Aura",type:"Outfit",price:"800",grad:G8,bg:BG8,img:"https://fortnite-api.com/images/cosmetics/br/cid_397_athena_commando_f_treasurehunterfashion/featured.png"}
         ]));
 
         // Section 8: Victory Vibes
         sections.push(makeSection(8, "Victory Vibes", [
-            {name:"The Quick Style",type:"Emote",price:"500",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/eid_nimble/featured.png"}
+            {name:"The Quick Style",type:"Emote",price:"500",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/eid_nimble/featured.png"}
         ]));
 
         // Section 9: Boundless
         sections.push(makeSection(9, "Boundless", [
-            {name:"Blastoff",type:"Outfit",price:"1,800",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/cid_857_athena_commando_m_elastic_c/featured.png"}
+            {name:"Blastoff",type:"Outfit",price:"1,800",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/cid_857_athena_commando_m_elastic_c/featured.png"}
         ]));
 
         // Section 10: DC
         sections.push(makeSection(10, "DC", [
-            {name:"Ninja Knight Batman",type:"Outfit",price:"1,600",grad:G9,img:"https://fortnite-api.com/images/cosmetics/br/character_swisskale/featured.png"},
-            {name:"Karuta Harley Quinn",type:"Outfit",price:"1,500",grad:G9,img:"https://fortnite-api.com/images/cosmetics/br/character_cordsyrup/featured.png"},
-            {name:"Harlequin \u014Ctsuchi",type:"Pickaxe",price:"800",grad:G9,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_cordsyrup/featured.png"},
-            {name:"Ninja Bat Vanish!",type:"Emote",price:"400",grad:G9,img:"https://fortnite-api.com/images/cosmetics/br/eid_swisskale/featured.png"}
+            {name:"Ninja Knight Batman",type:"Outfit",price:"1,600",grad:G9,bg:BG9,img:"https://fortnite-api.com/images/cosmetics/br/character_swisskale/featured.png"},
+            {name:"Karuta Harley Quinn",type:"Outfit",price:"1,500",grad:G9,bg:BG9,img:"https://fortnite-api.com/images/cosmetics/br/character_cordsyrup/featured.png"},
+            {name:"Harlequin \u014Ctsuchi",type:"Pickaxe",price:"800",grad:G9,bg:BG9,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_cordsyrup/featured.png"},
+            {name:"Ninja Bat Vanish!",type:"Emote",price:"400",grad:G9,bg:BG9,img:"https://fortnite-api.com/images/cosmetics/br/eid_swisskale/featured.png"}
         ]));
 
         // Section 11: South Park
         sections.push(makeSection(11, "South Park", [
-            {name:"Stan Marsh",type:"Outfit",price:"1,500",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/character_liquidcouch/featured.png"},
-            {name:"Eric Cartman",type:"Outfit",price:"1,500",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/character_morningsoak_cook/icon.png"},
-            {name:"Towelie",type:"Sidekick",price:"1,500",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/companion_fillbandit/featured.png"},
-            {name:"Butters' Hammer of Chaos",type:"Pickaxe",price:"500",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_ozonecredit/featured.png"},
-            {name:"Professor Chaos' Cape",type:"Back Bling",price:"300",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/backpack_ozonecredit/icon.png"},
-            {name:"AWESOM-O Crowbar",type:"Pickaxe",price:"500",grad:G10,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_morningsoak_cook/featured.png"}
+            {name:"Stan Marsh",type:"Outfit",price:"1,500",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/character_liquidcouch/featured.png"},
+            {name:"Eric Cartman",type:"Outfit",price:"1,500",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/character_morningsoak_cook/icon.png"},
+            {name:"Towelie",type:"Sidekick",price:"1,500",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/companion_fillbandit/featured.png"},
+            {name:"Butters' Hammer of Chaos",type:"Pickaxe",price:"500",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_ozonecredit/featured.png"},
+            {name:"Professor Chaos' Cape",type:"Back Bling",price:"300",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/backpack_ozonecredit/icon.png"},
+            {name:"AWESOM-O Crowbar",type:"Pickaxe",price:"500",grad:G10,bg:BG10,img:"https://fortnite-api.com/images/cosmetics/br/pickaxe_morningsoak_cook/featured.png"}
         ]));
 
         // Section 12: Battle Ready
         sections.push(makeSection(12, "Battle Ready", [
-            {name:"Starflare",type:"Outfit",price:"1,500",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/cid_808_athena_commando_f_constellationsun/featured.png"},
-            {name:"adidas Harden Vol 9 'Red'",type:"Kicks",price:"1,000",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/shoes_volumewellchecker/featured.png"},
-            {name:"Megabat",type:"Glider",price:"800",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/glider_id_154_glowbrobat/featured.png"}
+            {name:"Starflare",type:"Outfit",price:"1,500",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/cid_808_athena_commando_f_constellationsun/featured.png"},
+            {name:"adidas Harden Vol 9 'Red'",type:"Kicks",price:"1,000",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/shoes_volumewellchecker/featured.png"},
+            {name:"Megabat",type:"Glider",price:"800",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/glider_id_154_glowbrobat/featured.png"}
         ]));
 
         // Section 13: Jam Tracks
         sections.push(makeSection(13, "Jam Tracks", [
-            {name:"Blitzkrieg Bop",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/9603260e3386723a.jpg"},
-            {name:"Get Low",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/f90c4a59e59660f3.jpg"},
-            {name:"Californication",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/3047d23075c21244.jpg"},
-            {name:"Stronger",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/a10a4bb20d5894ac.jpg"},
-            {name:"Wild Ones",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/e9f61ec5e57b8f95.jpg"},
-            {name:"WHATS POPPIN",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/feb4c89318bf84b4.jpg"},
-            {name:"Faint",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/1d28b2a3c26c0308.jpg"},
-            {name:"Ain't It Fun",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/e00f743c051bef87.jpg"},
-            {name:"Buddy Holly",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/eee2650b94524edd.jpg"},
-            {name:"The Business",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/d459a51774206f15.jpg"},
-            {name:"As Alive As You Need Me To Be",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/b3ffa70f132df6e6.jpg"},
-            {name:"Big Energy",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/2bf3fd32c092435f.jpg"},
-            {name:"Don't You Worry Child",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/cc99d7a91551cc5b.jpg"},
-            {name:"Starboy",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/633eda9e0ad1e2ee.jpg"}
+            {name:"Blitzkrieg Bop",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/9603260e3386723a.jpg"},
+            {name:"Get Low",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/f90c4a59e59660f3.jpg"},
+            {name:"Californication",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/3047d23075c21244.jpg"},
+            {name:"Stronger",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/a10a4bb20d5894ac.jpg"},
+            {name:"Wild Ones",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/e9f61ec5e57b8f95.jpg"},
+            {name:"WHATS POPPIN",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/feb4c89318bf84b4.jpg"},
+            {name:"Faint",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/1d28b2a3c26c0308.jpg"},
+            {name:"Ain't It Fun",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/e00f743c051bef87.jpg"},
+            {name:"Buddy Holly",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/eee2650b94524edd.jpg"},
+            {name:"The Business",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/d459a51774206f15.jpg"},
+            {name:"As Alive As You Need Me To Be",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/b3ffa70f132df6e6.jpg"},
+            {name:"Big Energy",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/2bf3fd32c092435f.jpg"},
+            {name:"Don't You Worry Child",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/cc99d7a91551cc5b.jpg"},
+            {name:"Starboy",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/633eda9e0ad1e2ee.jpg"}
         ]));
 
-        // Section 14: Recoil AV (placeholder)
+        // Section 14: Recoil AV
         sections.push(makeSection(14, "Recoil AV", [
-            {name:"Recoil AV Bundle",type:"Bundle",price:"1,200",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"}
+            {name:"Recoil AV Bundle",type:"Bundle",price:"1,200",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"}
         ]));
 
         // Section 15: Ford F-150
         sections.push(makeSection(15, "Ford F-150", [
-            {name:"Ford F-150 Bundle",type:"Bundle",price:"2,500",grad:G11,img:"https://fortnite-api.com/images/cosmetics/br/cid_857_athena_commando_m_elastic_c/featured.png"}
+            {name:"Ford F-150 Bundle",type:"Bundle",price:"2,500",grad:G11,bg:BG11,img:"https://fortnite-api.com/images/cosmetics/br/cid_857_athena_commando_m_elastic_c/featured.png"}
         ]));
 
         // Section 16: Vehicle Accessories
         sections.push(makeSection(16, "Vehicle Accessories", [
-            {name:"Ford F-150 Boost",type:"Boost",price:"400",grad:G12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
-            {name:"Union Beams",type:"Boost",price:"400",grad:G12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
-            {name:"Fireplug",type:"Wheels",price:"400",grad:G12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
-            {name:"Finny",type:"Wheels",price:"400",grad:G12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"}
+            {name:"Ford F-150 Boost",type:"Boost",price:"400",grad:G12,bg:BG12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
+            {name:"Union Beams",type:"Boost",price:"400",grad:G12,bg:BG12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
+            {name:"Fireplug",type:"Wheels",price:"400",grad:G12,bg:BG12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"},
+            {name:"Finny",type:"Wheels",price:"400",grad:G12,bg:BG12,img:"https://fortnite-api.com/images/cosmetics/br/glider_stealth/featured.png"}
         ]));
 
         // Section 17: LISA
         sections.push(makeSection(17, "LISA", [
-            {name:"LISA",type:"Outfit",price:"2,200",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/character_chimecurlcorn/featured.png"},
-            {name:"Louis Plushie",type:"Back Bling",price:"400",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/backpack_chimecurlcorn/featured.png"},
-            {name:"LISA's Classic Mic",type:"Bundle",price:"500",grad:G3,img:"https://fortnite-api.com/images/cosmetics/br/backpack_chimecurlcorn_mic/featured.png"},
-            {name:"Rockstar",type:"Jam Track",price:"500",grad:G3,img:"https://cdn.fortnite-api.com/tracks/04a094918afe52c3.jpg"}
+            {name:"LISA",type:"Outfit",price:"2,200",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/character_chimecurlcorn/featured.png"},
+            {name:"Louis Plushie",type:"Back Bling",price:"400",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/backpack_chimecurlcorn/featured.png"},
+            {name:"LISA's Classic Mic",type:"Bundle",price:"500",grad:G3,bg:BG3,img:"https://fortnite-api.com/images/cosmetics/br/backpack_chimecurlcorn_mic/featured.png"},
+            {name:"Rockstar",type:"Jam Track",price:"500",grad:G3,bg:BG3,img:"https://cdn.fortnite-api.com/tracks/04a094918afe52c3.jpg"}
         ]));
 
         // Section 18: Special Offers & Bundles
         sections.push(makeSection(18, "Special Offers & Bundles", [
-            {name:"Dune Bundle",type:"Bundle",price:"2,000",grad:G1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"}
+            {name:"Dune Bundle",type:"Bundle",price:"2,000",grad:G1,bg:BG1,img:"https://fortnite-api.com/images/cosmetics/br/cid_a_215_athena_commando_f_sunrisecastle_48tiz/featured.png"}
         ]));
 
         document.getElementById('sections-container').innerHTML = sections.join('\n');
