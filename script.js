@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
+    // Track user interaction for autoplay policy
+    let userHasInteracted = false;
+
     // 3D Carousel transform helper
     function getCarouselTransform(position, total) {
         let relPos = position;
@@ -70,14 +73,24 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.opacity = transforms.opacity;
             card.style.zIndex = transforms.zIndex;
 
-            // Video playback control - play & unmute only when centered AND in view
+            // Video playback control
             const video = card.querySelector('.card-video');
             if (video) {
                 let relPos = position;
                 if (relPos > totalCards / 2) relPos -= totalCards;
                 if (relPos === 0 && carouselInView) {
-                    video.play();
-                    video.muted = false;
+                    // Centered and in view - play video
+                    // Start muted, unmute only after user interaction
+                    if (!userHasInteracted) {
+                        video.muted = true;
+                    } else {
+                        video.muted = false;
+                    }
+                    video.play().catch(() => {
+                        // Autoplay blocked - keep muted and retry
+                        video.muted = true;
+                        video.play().catch(() => {});
+                    });
                 } else {
                     video.pause();
                     video.muted = true;
@@ -86,13 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Mark user interaction on first click/touch anywhere on page
+    function onUserInteraction() {
+        userHasInteracted = true;
+        updateCarousel();
+        document.removeEventListener('click', onUserInteraction);
+        document.removeEventListener('touchstart', onUserInteraction);
+    }
+    document.addEventListener('click', onUserInteraction);
+    document.addEventListener('touchstart', onUserInteraction);
+
     // Navigation
     function goToPrev() {
+        userHasInteracted = true;
         carouselIndex = (carouselIndex - 1 + totalCards) % totalCards;
         updateCarousel();
     }
 
     function goToNext() {
+        userHasInteracted = true;
         carouselIndex = (carouselIndex + 1) % totalCards;
         updateCarousel();
     }
@@ -109,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Touch/swipe
     let touchStartX = 0;
     const carouselContainer = document.querySelector('.carousel-container');
-    
+
     if (carouselContainer) {
         carouselContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
@@ -119,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const touchEndX = e.changedTouches[0].screenX;
             const diff = touchStartX - touchEndX;
             if (Math.abs(diff) > 50) {
+                userHasInteracted = true;
                 diff > 0 ? goToNext() : goToPrev();
             }
         }, { passive: true });
@@ -127,10 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Click on card
     cards.forEach((card, index) => {
         card.addEventListener('click', () => {
+            userHasInteracted = true;
             const position = (index - carouselIndex + totalCards) % totalCards;
             let relPos = position;
             if (relPos > totalCards / 2) relPos -= totalCards;
-            
+
             if (relPos !== 0) {
                 carouselIndex = (carouselIndex + relPos + totalCards) % totalCards;
                 updateCarousel();
