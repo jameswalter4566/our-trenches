@@ -73,6 +73,7 @@ body {
     backdrop-filter: blur(10px);
     height: 64px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    zoom: 1.25;
 }
 
 .nav-container {
@@ -279,6 +280,35 @@ body {
 @media (min-width: 1800px) {
     .hero-text-content {
         padding-top: 400px;
+    }
+}
+
+.hero-trenches-title {
+    font-family: 'HeadingNowVariable', sans-serif;
+    font-size: 140px;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 825, "wght" 800;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1023px) {
+    .hero-trenches-title {
+        font-size: 80px;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-trenches-title {
+        font-size: 50px;
+        letter-spacing: 2px;
     }
 }
 
