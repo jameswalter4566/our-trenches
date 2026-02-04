@@ -153,8 +153,8 @@
         const containTypes = ['Emote','Pickaxe','Wrap','Glider','Back Bling','Boost','Wheels','Sidekick','Kicks'];
 
         function imgStyle(type, isJamTrack) {
-            if (isJamTrack) return 'style="object-fit:cover;transform:none;position:relative;left:auto;top:auto;width:100%;height:100%;"';
-            if (containTypes.includes(type)) return 'style="object-fit:contain;transform:translateX(-50%) translateY(-50%) scale(1);top:50%;left:50%;"';
+            if (isJamTrack) return 'style="object-fit:cover;"';
+            if (containTypes.includes(type)) return 'style="object-fit:contain;"';
             return '';
         }
 

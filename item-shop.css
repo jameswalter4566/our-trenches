@@ -355,14 +355,12 @@
 
 .card-char-img {
     position: absolute;
-    aspect-ratio: auto;
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-    transform: translateX(-50%) translateY(-50%) scale(1.6);
-    left: 50%;
-    top: 77.5%;
+    top: 0;
+    left: 0;
 }
 
 .card-char-emoji {
