@@ -264,6 +264,7 @@ body {
     font-size: 72px;
     font-weight: 400;
     font-style: italic;
+    font-variation-settings: "wdth" 825, "wght" 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
@@ -314,6 +315,7 @@ body {
     font-size: 26px;
     font-weight: 400;
     font-style: italic;
+    font-variation-settings: "wdth" 825, "wght" 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1;
@@ -798,6 +800,7 @@ body {
     font-size: 28px;
     font-weight: 400;
     font-style: italic;
+    font-variation-settings: "wdth" 825, "wght" 700;
     text-transform: uppercase;
     color: var(--text-primary);
     text-decoration: none;
