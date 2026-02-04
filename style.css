@@ -263,6 +263,24 @@ body {
     align-items: center;
 }
 
+@media (min-width: 1024px) {
+    .hero-text-content {
+        padding-top: 280px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero-text-content {
+        padding-top: 340px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .hero-text-content {
+        padding-top: 400px;
+    }
+}
+
 .hero-title {
     font-family: 'HeadingNowVariable', sans-serif;
     font-size: 72px;
