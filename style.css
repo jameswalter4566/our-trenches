@@ -1,5 +1,8 @@
 /* Our Trenches - EXACT ipodotrun_v2 Carousel Replica */
 
+/* Military Stencil Font */
+@import url('https://fonts.cdnfonts.com/css/stencil-ww-ii');
+
 /* Font Faces - Exact Fortnite fonts (site-wide) */
 @font-face {
     font-family: 'HeadingNowVariable';
@@ -258,7 +261,7 @@ body {
     position: relative;
     z-index: 5;
     text-align: center;
-    padding: 200px 20px 20px;
+    padding: 120px 20px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -267,48 +270,47 @@ body {
 
 @media (min-width: 1024px) {
     .hero-text-content {
-        padding-top: 280px;
+        padding-top: 140px;
     }
 }
 
 @media (min-width: 1440px) {
     .hero-text-content {
-        padding-top: 340px;
+        padding-top: 160px;
     }
 }
 
 @media (min-width: 1800px) {
     .hero-text-content {
-        padding-top: 400px;
+        padding-top: 180px;
     }
 }
 
 .hero-trenches-title {
-    font-family: 'HeadingNowVariable', sans-serif;
-    font-size: 140px;
+    font-family: 'Stencil WW II', 'Impact', sans-serif;
+    font-size: 200px;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings: "wdth" 825, "wght" 800;
     text-transform: uppercase;
-    letter-spacing: 6px;
-    color: #fff;
+    letter-spacing: 12px;
+    color: #000;
     text-align: center;
     width: 100%;
-    line-height: 1;
-    margin-bottom: 8px;
+    line-height: 0.9;
+    margin-bottom: 12px;
 }
 
 @media (max-width: 1023px) {
     .hero-trenches-title {
-        font-size: 80px;
-        letter-spacing: 4px;
+        font-size: 110px;
+        letter-spacing: 6px;
     }
 }
 
 @media (max-width: 767px) {
     .hero-trenches-title {
-        font-size: 50px;
-        letter-spacing: 2px;
+        font-size: 60px;
+        letter-spacing: 3px;
     }
 }
 
