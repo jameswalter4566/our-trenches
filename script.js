@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return transforms[clampedPos.toString()] || transforms['0'];
     }
 
+    // Track if carousel is scrolled out of view
+    let carouselInView = true;
+
     // Update carousel positions
     function updateCarousel() {
         cards.forEach((card, index) => {
@@ -67,12 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.opacity = transforms.opacity;
             card.style.zIndex = transforms.zIndex;
 
-            // Video playback control - play & unmute when centered
+            // Video playback control - play & unmute only when centered AND in view
             const video = card.querySelector('.card-video');
             if (video) {
                 let relPos = position;
                 if (relPos > totalCards / 2) relPos -= totalCards;
-                if (relPos === 0) {
+                if (relPos === 0 && carouselInView) {
                     video.play();
                     video.muted = false;
                 } else {
@@ -137,6 +140,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize carousel
     updateCarousel();
+
+    // Mute/pause videos when carousel scrolls out of view
+    if (carouselContainer) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                carouselInView = entry.isIntersecting;
+                updateCarousel();
+            });
+        }, { threshold: 0.3 });
+        scrollObserver.observe(carouselContainer);
+    }
 
     // Navbar scroll
     const nav = document.querySelector('.main-nav');
