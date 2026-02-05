@@ -703,17 +703,17 @@ body {
 
 .features-title {
     font-family: 'Inter', sans-serif;
-    font-size: 38px;
+    font-size: 56px;
     font-weight: 900;
     font-style: italic;
     color: #fff;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .features-subtitle {
-    font-size: 14px;
+    font-size: 22px;
     color: rgba(255,255,255,0.5);
-    max-width: 480px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -723,21 +723,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    margin-bottom: 50px;
-    padding: 0 60px;
-    max-width: 1100px;
+    gap: 80px;
+    margin-bottom: 70px;
+    padding: 0 80px;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* Row 1: Text Left, Image Right */
 .feature-row:not(.reverse) .feature-text {
-    flex: 0 0 320px;
+    flex: 0 0 480px;
 }
 
 .feature-row:not(.reverse) .feature-image {
-    flex: 0 0 420px;
+    flex: 0 0 600px;
 }
 
 /* Row 2: Image Left, Text Right (HTML order is already correct) */
@@ -746,39 +746,39 @@ body {
 }
 
 .feature-row.reverse .feature-image {
-    flex: 0 0 420px;
+    flex: 0 0 600px;
 }
 
 .feature-row.reverse .feature-text {
-    flex: 0 0 320px;
+    flex: 0 0 480px;
 }
 
 /* Text Styles - EXACT Fortnite */
 .feature-heading {
     font-family: 'Inter', sans-serif;
-    font-size: 24px;
+    font-size: 38px;
     font-weight: 900;
     font-style: italic;
     color: #fff;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 .feature-description {
-    font-size: 14px;
+    font-size: 20px;
     color: rgba(255,255,255,0.6);
     line-height: 1.6;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .feature-btn {
     display: inline-block;
     background: var(--accent-yellow);
     color: #000;
-    padding: 12px 20px;
-    border-radius: 4px;
+    padding: 16px 32px;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
