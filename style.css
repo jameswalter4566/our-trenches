@@ -724,7 +724,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 80px;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
     padding: 0 80px;
     max-width: 1500px;
     margin-left: auto;
@@ -743,6 +743,7 @@ body {
 /* Row 2: Image Left, Text Right (HTML order is already correct) */
 .feature-row.reverse {
     flex-direction: row;
+    margin-top: 60px;
 }
 
 .feature-row.reverse .feature-image {
