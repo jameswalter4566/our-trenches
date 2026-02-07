@@ -44,28 +44,12 @@
     line-height: normal;
 }
 
-/* ===== NAVIGATION ===== */
-.marketplace-page .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
-    height: 70px;
-    background: var(--csfloat-bg);
-    padding: 0 60px;
-}
+/* Navigation uses site default styles from style.css */
 
-.marketplace-page .nav-links li a.active {
-    color: var(--csfloat-blue-accent);
-    border-bottom: 3px solid var(--csfloat-blue-accent);
-    padding-bottom: 4px;
-}
-
-/* ===== CATEGORY BAR - Exact CSFloat ===== */
+/* ===== CATEGORY BAR ===== */
 .category-bar {
     position: fixed;
-    top: 70px;
+    top: 93px; /* Below original nav (64px * 1.45 zoom) */
     left: 0;
     right: 0;
     z-index: 199;
@@ -111,8 +95,8 @@
 
 /* ===== MAIN LAYOUT ===== */
 .marketplace-wrapper {
-    padding-top: 123px; /* 70px nav + 38px category + 15px gap */
-    min-height: calc(100vh - 123px);
+    padding-top: 146px; /* 93px nav + 38px category + 15px gap */
+    min-height: calc(100vh - 146px);
 }
 
 .marketplace-layout {
@@ -125,8 +109,8 @@
     width: 350px;
     flex-shrink: 0;
     position: sticky;
-    top: 123px;
-    max-height: calc(100vh - 138px);
+    top: 146px;
+    max-height: calc(100vh - 160px);
     overflow-y: auto;
     padding-right: 8px;
     scrollbar-width: thin;
@@ -1051,14 +1035,7 @@
     background: var(--csfloat-blue-accent);
 }
 
-/* ===== FOOTER ===== */
-.marketplace-page .main-footer {
-    background: var(--csfloat-bg);
-    border-top: 1px solid var(--csfloat-border);
-    margin: 0 -60px;
-    padding-left: 60px;
-    padding-right: 60px;
-}
+/* Footer uses site default styles from style.css */
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1400px) {
@@ -1070,12 +1047,7 @@
         padding-left: 40px;
         padding-right: 40px;
     }
-    .marketplace-page .main-footer {
-        margin: 0 -40px;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-    .marketplace-sidebar {
+        .marketplace-sidebar {
         width: 300px;
     }
 }
@@ -1089,12 +1061,7 @@
         padding-left: 24px;
         padding-right: 24px;
     }
-    .marketplace-page .main-footer {
-        margin: 0 -24px;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-    .marketplace-sidebar {
+        .marketplace-sidebar {
         width: 280px;
     }
 }
@@ -1142,12 +1109,7 @@
         padding-left: 16px;
         padding-right: 16px;
     }
-    .marketplace-page .main-footer {
-        margin: 0 -16px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-    .marketplace-layout {
+        .marketplace-layout {
         flex-direction: column;
     }
     .marketplace-sidebar {
