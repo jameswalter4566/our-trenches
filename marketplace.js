@@ -286,54 +286,67 @@ document.addEventListener('DOMContentLoaded', function () {
         var isLegendary = item.rarity === 'legendary';
         var rarityPercent = (RARITY_RANK[item.rarity] / 5) * 100;
 
+        // Generate fake float value (CSFloat style)
+        var floatValue = (Math.random() * 0.5).toFixed(12);
+
+        // Generate fake rank
+        var rank = Math.floor(Math.random() * 900) + 100;
+
         // Generate a fake "discount" percentage for visual effect
         var discount = Math.floor(Math.random() * 30) + 50;
 
-        // Generate fake expiry time
+        // Generate fake expiry time (HH:MM:SS:MS format like CSFloat)
         var hours = Math.floor(Math.random() * 24);
         var mins = Math.floor(Math.random() * 60);
         var secs = Math.floor(Math.random() * 60);
         var expiry = String(hours).padStart(2, '0') + ':' + String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
 
+        // Online/Offline status
+        var isOnline = Math.random() > 0.5;
+        var statusClass = isOnline ? 'online' : '';
+        var statusText = isOnline ? 'Online' : 'Offline';
+
         return '<a href="marketplace-item.html?id=' + encodeURIComponent(item.id) + '" class="mp-card">'
-             // Header
+             // Header - 57px height, 10px padding
              + '<div class="mp-card-header">'
              + '<div class="mp-card-name' + (isLegendary ? ' legendary' : '') + '">' + escapeHtml(item.name) + '</div>'
              + '<div class="mp-card-type">' + escapeHtml(item.type) + '</div>'
              + '</div>'
-             // Image area
+             // Image area - 178px height
              + '<div class="mp-card-image" style="background:' + rarity.bg + '">'
              + '<span class="mp-card-item-visual">' + item.emoji + '</span>'
              + '<div class="mp-card-actions">'
              + '<button class="mp-card-action" onclick="event.preventDefault();" title="Add to wishlist">'
-             + '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'
+             + '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>'
              + '</button>'
              + '<button class="mp-card-action" onclick="event.preventDefault();" title="Quick view">'
-             + '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>'
+             + '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>'
              + '</button>'
              + '</div>'
              + '</div>'
-             // Info section
+             // Info section - 159px height, padding 12px 12px 0px
              + '<div class="mp-card-info">'
+             // Price row - 24px height
              + '<div class="mp-card-price-row">'
              + '<span class="mp-card-price"><span class="tbucks-icon">' + TBUCKS_SVG + '</span>' + item.price.toLocaleString() + '</span>'
              + '<span class="mp-card-discount">' + discount + '%</span>'
              + '</div>'
+             // Float bar - 8px height
              + '<div class="mp-card-rarity-bar" style="background: var(--wear-gradient)">'
              + '<div class="mp-card-rarity-bar-marker" style="left:' + rarityPercent + '%"></div>'
              + '</div>'
-             + '<div class="mp-card-meta">'
-             + '<span class="mp-card-rarity" style="color:' + rarity.color + '">'
-             + '<span class="rarity-dot" style="background:' + rarity.color + '"></span>'
-             + rarity.label
-             + '</span>'
-             + '<span class="mp-card-stat">' + item.season + '</span>'
+             // Float value row - 20px height
+             + '<div class="mp-card-float-row">'
+             + '<span class="mp-card-float-value">' + floatValue + '</span>'
+             + '<span class="mp-card-rank">' + rank + '</span>'
              + '</div>'
-             + '</div>'
-             // Footer
+             // Seller details - 18px height
+             + '<div class="mp-card-seller ' + statusClass + '">' + statusText + '</div>'
+             // Footer/Expires - 26px height
              + '<div class="mp-card-footer">'
-             + '<span class="mp-card-status">Available</span>'
-             + '<span class="mp-card-expires">Expires in ' + expiry + '</span>'
+             + '<span class="mp-card-expires-label">Expires in</span>'
+             + '<span class="mp-card-expires">' + expiry + '</span>'
+             + '</div>'
              + '</div>'
              + '</a>';
     }
