@@ -45,6 +45,30 @@
         </div>
     </nav>
 
+    <!-- Category Bar (CSFloat Style) -->
+    <div class="category-bar">
+        <button class="category-btn active" data-category="all">
+            All Items
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <button class="category-btn" data-category="weapon-skin">
+            Weapons
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <button class="category-btn" data-category="character-skin">
+            Characters
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <button class="category-btn" data-category="accessory">
+            Accessories
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <button class="category-btn" data-category="emote">
+            Emotes
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+    </div>
+
     <!-- Marketplace Content -->
     <div class="marketplace-wrapper">
         <div class="marketplace-layout">
@@ -56,43 +80,94 @@
                         My Collection
                     </a>
 
+                    <!-- Search -->
                     <div class="filter-search">
-                        <svg viewBox="0 0 24 24" width="16" height="16" class="filter-search-icon"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                        <input type="text" placeholder="Search items..." id="marketplace-search">
-                    </div>
-
-                    <div class="filter-group">
-                        <h3 class="filter-title">Price (T-Bucks)</h3>
-                        <div class="filter-price-inputs">
-                            <input type="number" placeholder="Min" id="price-min">
-                            <span class="price-separator">&ndash;</span>
-                            <input type="number" placeholder="Max" id="price-max">
+                        <div class="filter-search-container">
+                            <svg class="filter-search-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <input type="text" placeholder="Search for items..." id="marketplace-search">
                         </div>
                     </div>
 
-                    <div class="filter-group">
-                        <h3 class="filter-title">Item Type</h3>
-                        <div class="filter-options" id="type-filters"></div>
+                    <!-- Price Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Price</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="price-inputs">
+                                <div class="price-input-group">
+                                    <label class="price-input-label">From</label>
+                                    <input type="number" class="price-input" placeholder="0" id="price-min">
+                                </div>
+                                <div class="price-input-group">
+                                    <label class="price-input-label">To</label>
+                                    <input type="number" class="price-input" placeholder="∞" id="price-max">
+                                </div>
+                            </div>
+                            <div class="price-quick-filters">
+                                <button class="price-quick-btn" data-min="0" data-max="500">&lt;500</button>
+                                <button class="price-quick-btn" data-min="500" data-max="1000">500-1K</button>
+                                <button class="price-quick-btn" data-min="1000" data-max="3000">1K-3K</button>
+                                <button class="price-quick-btn" data-min="3000" data-max="">&gt;3K</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="filter-group">
-                        <h3 class="filter-title">Color</h3>
-                        <div class="filter-colors" id="color-filters"></div>
+                    <!-- Rarity Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Rarity</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="rarity-bar"></div>
+                            <div class="filter-options" id="rarity-filters"></div>
+                        </div>
                     </div>
 
-                    <div class="filter-group">
-                        <h3 class="filter-title">Rarity</h3>
-                        <div class="filter-options" id="rarity-filters"></div>
+                    <!-- Item Type Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Item Type</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options" id="type-filters"></div>
+                        </div>
                     </div>
 
-                    <div class="filter-group">
-                        <h3 class="filter-title">Season</h3>
-                        <div class="filter-options" id="season-filters"></div>
+                    <!-- Color Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Color</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-colors" id="color-filters"></div>
+                        </div>
                     </div>
 
-                    <div class="filter-group">
-                        <h3 class="filter-title">Program</h3>
-                        <div class="filter-options" id="program-filters"></div>
+                    <!-- Season Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Season</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-toggles" id="season-filters"></div>
+                        </div>
+                    </div>
+
+                    <!-- Program Filter -->
+                    <div class="filter-section">
+                        <div class="filter-header" onclick="toggleFilter(this)">
+                            <h3 class="filter-title">Program</h3>
+                            <svg class="filter-toggle" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options" id="program-filters"></div>
+                        </div>
                     </div>
 
                     <button class="filter-reset-btn" id="reset-filters">Reset Filters</button>
@@ -101,10 +176,22 @@
 
             <!-- Main Content -->
             <div class="marketplace-content">
-                <div class="marketplace-header">
-                    <h1 class="marketplace-title" id="marketplace-title">Marketplace</h1>
-                    <div class="marketplace-controls">
-                        <span class="results-count" id="results-count">20 items</span>
+                <!-- Content Header -->
+                <div class="content-header">
+                    <div class="content-header-left">
+                        <button class="filter-icon-btn" title="Toggle filters">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+                        </button>
+                        <button class="refresh-btn" title="Refresh">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+                        </button>
+                        <div class="content-tabs">
+                            <button class="content-tab active">All Items</button>
+                            <button class="content-tab">Hot Deals</button>
+                            <button class="content-tab">New Listings</button>
+                        </div>
+                    </div>
+                    <div class="sort-dropdown">
                         <select class="sort-select" id="sort-select">
                             <option value="price-asc">Price: Low to High</option>
                             <option value="price-desc">Price: High to Low</option>
@@ -115,6 +202,12 @@
                     </div>
                 </div>
 
+                <!-- Results Count -->
+                <div style="margin-bottom: 16px; color: var(--csfloat-text-muted); font-size: 14px;">
+                    <span id="results-count">20 items</span>
+                </div>
+
+                <!-- Grid -->
                 <div class="marketplace-grid" id="marketplace-grid"></div>
             </div>
         </div>

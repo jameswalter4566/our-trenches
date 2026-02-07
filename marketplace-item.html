@@ -45,6 +45,15 @@
         </div>
     </nav>
 
+    <!-- Category Bar (for consistency) -->
+    <div class="category-bar">
+        <a href="marketplace.html" class="category-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            Back to Market
+        </a>
+        <span style="color: var(--csfloat-text-muted); font-size: 14px;" id="breadcrumb"></span>
+    </div>
+
     <!-- Item Detail Content -->
     <div class="item-detail-wrapper">
         <div class="item-detail-layout">
@@ -194,8 +203,8 @@
             }
             const btn = document.getElementById('buy-btn');
             btn.textContent = 'Added to Collection!';
-            btn.style.background = '#30b030';
-            btn.style.color = '#fff';
+            btn.style.background = 'rgb(75, 235, 100)';
+            btn.style.color = '#000';
             setTimeout(() => {
                 btn.textContent = 'Buy Now';
                 btn.style.background = '';
@@ -206,8 +215,11 @@
         // Navbar scroll
         const nav = document.querySelector('.main-nav');
         window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 50 ? 'rgba(10, 22, 40, 0.98)' : 'rgba(10, 22, 40, 0.85)';
+            nav.style.background = 'rgb(21, 23, 28)';
         });
+
+        // Update breadcrumb
+        document.getElementById('breadcrumb').textContent = `/ ${item.type} / ${item.name}`;
     });
     </script>
 </body>
