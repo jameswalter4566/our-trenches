@@ -116,7 +116,7 @@
     top: 146px;
     max-height: calc(100vh - 160px);
     overflow-y: auto;
-    padding-right: 12px;
+    overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
@@ -137,7 +137,7 @@
 .sidebar-inner {
     display: flex;
     flex-direction: column;
-    width: 310px;
+    width: 100%;
 }
 
 
@@ -149,7 +149,7 @@
 .filter-search-container {
     display: flex;
     align-items: center;
-    width: 310px;
+    width: 100%;
     height: 44px;
     padding: 0 16px;
     background: var(--csfloat-input-bg);
@@ -302,7 +302,6 @@
 
 .price-input-group {
     flex: 1;
-    max-width: 150px;
 }
 
 .price-input-label {
@@ -315,7 +314,7 @@
 .price-input-wrapper {
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 100%;
     height: 36px;
     padding: 0 12px;
     background: var(--csfloat-input-bg);
@@ -392,7 +391,7 @@
 }
 
 .wear-bar {
-    width: 298px;
+    width: 100%;
     height: 7px;
     background: var(--wear-gradient);
     border-radius: 0;
@@ -434,7 +433,6 @@
 
 .wear-input-group {
     flex: 1;
-    max-width: 150px;
 }
 
 .wear-input-label {
@@ -445,7 +443,7 @@
 }
 
 .wear-input {
-    width: 150px;
+    width: 100%;
     height: 36px;
     padding: 0 12px;
     background: var(--csfloat-input-bg);
