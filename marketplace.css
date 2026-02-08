@@ -21,15 +21,19 @@
 :root {
     --csfloat-bg: rgb(21, 23, 28);
     --csfloat-card-bg: rgb(27, 29, 36);
+    --csfloat-input-bg: rgba(193, 206, 255, 0.04);
     --csfloat-text-white: rgb(255, 255, 255);
-    --csfloat-text-muted: rgb(158, 158, 158);
-    --csfloat-blue-primary: rgb(35, 123, 255);
+    --csfloat-text-muted: rgba(255, 255, 255, 0.7);
+    --csfloat-text-dim: rgba(255, 255, 255, 0.5);
+    --csfloat-blue-primary: rgb(51, 153, 255);
     --csfloat-blue-accent: rgb(30, 144, 255);
     --csfloat-orange: rgb(255, 120, 44);
+    --csfloat-gold: oklch(0.88 0.161 109.3);
     --csfloat-green: rgb(75, 235, 100);
     --csfloat-red: rgb(235, 75, 75);
-    --csfloat-border: rgba(255, 255, 255, 0.08);
-    --wear-gradient: linear-gradient(to right, rgb(76, 175, 80), rgb(139, 195, 74), rgb(255, 235, 59), rgb(255, 152, 0), rgb(244, 67, 54));
+    --csfloat-border: rgba(255, 255, 255, 0.12);
+    --csfloat-border-light: rgba(255, 255, 255, 0.08);
+    --wear-gradient: linear-gradient(to right, rgb(217, 187, 165), rgb(229, 144, 59), rgb(219, 89, 119), rgb(103, 117, 225));
 }
 
 /* ===== PAGE LAYOUT - Exact CSFloat ===== */
@@ -104,15 +108,15 @@
     gap: 15px;
 }
 
-/* ===== SIDEBAR - Exact CSFloat 350px ===== */
+/* ===== SIDEBAR - Exact CSFloat 310px ===== */
 .marketplace-sidebar {
-    width: 350px;
+    width: 310px;
     flex-shrink: 0;
     position: sticky;
     top: 146px;
     max-height: calc(100vh - 160px);
     overflow-y: auto;
-    padding-right: 8px;
+    padding-right: 12px;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
@@ -133,64 +137,38 @@
 .sidebar-inner {
     display: flex;
     flex-direction: column;
+    width: 310px;
 }
 
-/* ===== MY COLLECTION BUTTON ===== */
-.my-collection-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    height: 48px;
-    margin-bottom: 16px;
-    background: var(--csfloat-blue-primary);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-family: 'HeadingNowVariable', sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    font-weight: 400;
-    font-variation-settings: "wdth" 825, "wght" 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-}
 
-.my-collection-btn:hover {
-    background: var(--csfloat-blue-accent);
-}
-
-.my-collection-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* ===== SEARCH INPUT - CSFloat Style ===== */
+/* ===== SEARCH INPUT - Exact CSFloat Style ===== */
 .filter-search {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .filter-search-container {
     display: flex;
     align-items: center;
-    gap: 12px;
-    height: 48px;
+    width: 310px;
+    height: 44px;
     padding: 0 16px;
-    background: var(--csfloat-card-bg);
-    border: 1px solid var(--csfloat-border);
-    border-radius: 8px;
+    background: var(--csfloat-input-bg);
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 .filter-search-container:focus-within {
-    border-color: var(--csfloat-blue-primary);
+    outline: 2px solid var(--csfloat-blue-primary);
+    outline-offset: -2px;
 }
 
 .filter-search-icon {
     color: var(--csfloat-text-muted);
     flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
 }
 
 .filter-search input {
@@ -208,33 +186,47 @@
     color: var(--csfloat-text-muted);
 }
 
-/* ===== FILTER SECTIONS ===== */
+.filter-search-shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--csfloat-text-dim);
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+/* ===== FILTER SECTIONS - Exact CSFloat ===== */
 .filter-section {
-    border-bottom: 1px solid var(--csfloat-border);
+    border-bottom: none;
+    margin-bottom: 8px;
 }
 
 .filter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    padding: 6px 0;
     cursor: pointer;
 }
 
 .filter-title {
-    font-family: 'HeadingNowVariable', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    font-variation-settings: "wdth" 668, "wght" 600;
-    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
     color: var(--csfloat-text-white);
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
     margin: 0;
 }
 
 .filter-toggle {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: var(--csfloat-text-muted);
     transition: transform 0.2s;
 }
@@ -251,15 +243,66 @@
     display: none;
 }
 
-/* ===== PRICE FILTER ===== */
+/* ===== PRICE FILTER - Exact CSFloat ===== */
+
+/* Price Range Slider */
+.price-slider-container {
+    position: relative;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 16px;
+}
+
+.price-slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.price-slider-fill {
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    background: var(--csfloat-blue-primary);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+
+.price-slider-thumb {
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid white;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.price-slider-thumb.right {
+    border-top: none;
+    border-bottom: 10px solid white;
+}
+
+/* Price Inputs */
 .price-inputs {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 12px;
 }
 
 .price-input-group {
     flex: 1;
+    max-width: 150px;
 }
 
 .price-input-label {
@@ -269,24 +312,47 @@
     margin-bottom: 6px;
 }
 
-.price-input {
-    width: 100%;
-    height: 40px;
+.price-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 36px;
     padding: 0 12px;
-    background: var(--csfloat-card-bg);
-    border: 1px solid var(--csfloat-border);
+    background: var(--csfloat-input-bg);
+    border: none;
     border-radius: 6px;
-    color: var(--csfloat-text-white);
-    font-family: inherit;
-    font-size: 14px;
-    outline: none;
     box-sizing: border-box;
 }
 
-.price-input:focus {
-    border-color: var(--csfloat-blue-primary);
+.price-input-prefix {
+    color: var(--csfloat-text-white);
+    font-size: 16px;
+    margin-right: 4px;
 }
 
+.price-input {
+    flex: 1;
+    width: 100%;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--csfloat-text-white);
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+}
+
+.price-input::placeholder {
+    color: var(--csfloat-text-muted);
+}
+
+.price-input-wrapper:focus-within {
+    outline: 2px solid var(--csfloat-blue-primary);
+    outline-offset: -2px;
+}
+
+/* Price Quick Filters - Exact CSFloat pill buttons */
 .price-quick-filters {
     display: flex;
     flex-wrap: wrap;
@@ -294,26 +360,142 @@
 }
 
 .price-quick-btn {
-    height: 32px;
+    height: 28px;
     padding: 0 12px;
-    background: var(--csfloat-card-bg);
+    background: transparent;
     border: 1px solid var(--csfloat-border);
-    border-radius: 6px;
+    border-radius: 14px;
     color: var(--csfloat-text-muted);
     font-family: inherit;
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
     transition: all 0.15s;
+    white-space: nowrap;
 }
 
-.price-quick-btn:hover,
+.price-quick-btn:hover {
+    border-color: var(--csfloat-text-muted);
+    color: var(--csfloat-text-white);
+}
+
 .price-quick-btn.active {
     background: var(--csfloat-blue-primary);
     border-color: var(--csfloat-blue-primary);
     color: #fff;
 }
 
-/* ===== RARITY BAR ===== */
+/* ===== WEAR SECTION - Exact CSFloat ===== */
+.wear-slider-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.wear-bar {
+    width: 298px;
+    height: 7px;
+    background: var(--wear-gradient);
+    border-radius: 0;
+}
+
+.wear-slider-thumbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7px;
+}
+
+.wear-thumb {
+    position: absolute;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid white;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.wear-thumb.right {
+    border-top: none;
+    border-bottom: 10px solid white;
+    top: auto;
+    bottom: -3px;
+}
+
+.wear-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.wear-input-group {
+    flex: 1;
+    max-width: 150px;
+}
+
+.wear-input-label {
+    display: block;
+    font-size: 12px;
+    color: var(--csfloat-text-muted);
+    margin-bottom: 6px;
+}
+
+.wear-input {
+    width: 150px;
+    height: 36px;
+    padding: 0 12px;
+    background: var(--csfloat-input-bg);
+    border: none;
+    border-radius: 6px;
+    color: var(--csfloat-text-white);
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.wear-input:focus {
+    outline: 2px solid var(--csfloat-blue-primary);
+    outline-offset: -2px;
+}
+
+/* Wear Toggle Buttons (FN, MW, FT, WW, BS) */
+.wear-toggles {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.wear-toggle-btn {
+    height: 28px;
+    padding: 0 14px;
+    background: transparent;
+    border: 1px solid var(--csfloat-border);
+    border-radius: 14px;
+    color: var(--csfloat-text-muted);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.wear-toggle-btn:hover {
+    border-color: var(--csfloat-text-muted);
+    color: var(--csfloat-text-white);
+}
+
+.wear-toggle-btn.active {
+    background: var(--csfloat-blue-primary);
+    border-color: var(--csfloat-blue-primary);
+    color: #fff;
+}
+
+/* ===== RARITY BAR (Legacy) ===== */
 .rarity-bar {
     height: 6px;
     border-radius: 3px;
@@ -321,7 +503,7 @@
     margin-bottom: 12px;
 }
 
-/* ===== CHECKBOX FILTERS ===== */
+/* ===== CHECKBOX FILTERS - Exact CSFloat ===== */
 .filter-options {
     display: flex;
     flex-direction: column;
@@ -339,7 +521,7 @@
     width: 18px;
     height: 18px;
     appearance: none;
-    border: 2px solid var(--csfloat-text-muted);
+    border: 2px solid var(--csfloat-border);
     border-radius: 4px;
     background: transparent;
     cursor: pointer;
@@ -378,6 +560,66 @@
     height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+/* ===== SPECIAL SECTION - Exact CSFloat ===== */
+.special-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.special-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.special-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border: 2px solid var(--csfloat-border);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.special-checkbox input[type="checkbox"]:checked {
+    background: var(--csfloat-blue-primary);
+    border-color: var(--csfloat-blue-primary);
+}
+
+.special-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.special-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.special-label.stattrak {
+    color: var(--csfloat-orange);
+}
+
+.special-label.souvenir {
+    color: var(--csfloat-gold);
+}
+
+.special-checkbox:hover .special-label {
+    opacity: 0.8;
 }
 
 /* ===== COLOR SWATCHES ===== */
@@ -1039,29 +1281,13 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1400px) {
-    .marketplace-page {
-        padding: 0 40px;
-    }
-    .marketplace-page .main-nav,
-    .category-bar {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-        .marketplace-sidebar {
+    .marketplace-sidebar {
         width: 300px;
     }
 }
 
 @media (max-width: 1200px) {
-    .marketplace-page {
-        padding: 0 24px;
-    }
-    .marketplace-page .main-nav,
-    .category-bar {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-        .marketplace-sidebar {
+    .marketplace-sidebar {
         width: 280px;
     }
 }
@@ -1104,12 +1330,11 @@
     .marketplace-page {
         padding: 0 16px;
     }
-    .marketplace-page .main-nav,
     .category-bar {
         padding-left: 16px;
         padding-right: 16px;
     }
-        .marketplace-layout {
+    .marketplace-layout {
         flex-direction: column;
     }
     .marketplace-sidebar {
