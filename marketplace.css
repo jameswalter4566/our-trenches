@@ -143,7 +143,7 @@
 
 /* ===== SEARCH INPUT - Exact CSFloat Style ===== */
 .filter-search {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .filter-search-container {
@@ -239,7 +239,8 @@
 }
 
 .filter-content {
-    padding-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 24px;
 }
 
 .filter-section.collapsed .filter-content {
@@ -253,7 +254,7 @@
     position: relative;
     width: 100%;
     height: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .price-slider-track {
@@ -300,7 +301,7 @@
 .price-inputs {
     display: flex;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     width: 100%;
 }
 
@@ -313,15 +314,15 @@
     display: block;
     font-size: 12px;
     color: var(--csfloat-text-muted);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .price-input-wrapper {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 36px;
-    padding: 0 10px;
+    height: 44px;
+    padding: 0 12px;
     background: rgba(193, 206, 255, 0.04);
     border: none;
     border-radius: 6px;
@@ -361,6 +362,7 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 8px;
+    margin-top: 4px;
 }
 
 .price-quick-btn {
@@ -395,7 +397,7 @@
 .wear-slider-container {
     position: relative;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .wear-bar {
@@ -436,7 +438,7 @@
 .wear-inputs {
     display: flex;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     width: 100%;
 }
 
@@ -449,13 +451,13 @@
     display: block;
     font-size: 12px;
     color: var(--csfloat-text-muted);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .wear-input {
     width: 100%;
-    height: 36px;
-    padding: 0 10px;
+    height: 44px;
+    padding: 0 12px;
     background: rgba(193, 206, 255, 0.04);
     border: none;
     border-radius: 6px;
