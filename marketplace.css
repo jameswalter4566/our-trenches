@@ -359,13 +359,13 @@
 /* Price Quick Filters - Exact CSFloat bubble buttons */
 .price-quick-filters {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 8px;
 }
 
 .price-quick-btn {
     height: 26px;
-    padding: 5px 8px;
+    padding: 5px 6px;
     background: rgba(193, 206, 255, 0.04);
     border: 0.666667px solid transparent;
     border-radius: 12px;
@@ -474,13 +474,13 @@
 /* Wear Toggle Buttons (FN, MW, FT, WW, BS) - Exact CSFloat bubble */
 .wear-toggles {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 8px;
+    flex-wrap: nowrap;
 }
 
 .wear-toggle-btn {
     height: 26px;
-    padding: 5px 8px;
+    padding: 5px 10px;
     background: rgba(193, 206, 255, 0.04);
     border: 0.666667px solid transparent;
     border-radius: 12px;
