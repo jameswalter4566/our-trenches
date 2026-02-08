@@ -1,6 +1,7 @@
 /* ===== TRENCHES MARKETPLACE - EXACT CSFloat Replica ===== */
 
 /* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @font-face {
     font-family: 'HeadingNowVariable';
     font-style: normal;
@@ -41,7 +42,7 @@
     background-color: var(--csfloat-bg);
     min-height: 100vh;
     padding: 0 60px;
-    font-family: 'HeadingNowVariable', Roboto, "Helvetica Neue", sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     color: var(--csfloat-text-white);
     font-size: 16px;
     font-weight: 400;
@@ -74,14 +75,14 @@
 .category-btn {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     height: 32px;
-    padding: 0 12px;
+    padding: 0 8px;
     background: transparent;
     border: none;
-    color: var(--csfloat-text-white);
-    font-family: inherit;
-    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
     font-weight: 400;
     cursor: pointer;
     white-space: nowrap;
@@ -89,17 +90,17 @@
 }
 
 .category-btn:hover {
-    color: var(--csfloat-blue-accent);
+    color: var(--csfloat-text-white);
 }
 
 .category-btn.active {
-    color: var(--csfloat-blue-accent);
+    color: var(--csfloat-text-white);
 }
 
 .category-btn svg {
-    width: 18px;
-    height: 18px;
-    opacity: 0.7;
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
 }
 
 /* ===== MAIN LAYOUT ===== */
@@ -223,12 +224,12 @@
 }
 
 .filter-title {
-    font-family: inherit;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 12px;
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     color: rgb(255, 255, 255);
-    letter-spacing: 0;
+    letter-spacing: 0.6px;
     margin: 0;
 }
 
@@ -317,8 +318,10 @@
 
 .price-input-label {
     display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 12px;
-    color: var(--csfloat-text-muted);
+    font-weight: 500;
+    color: rgb(158, 167, 177);
     margin-bottom: 8px;
 }
 
@@ -454,8 +457,10 @@
 
 .wear-input-label {
     display: block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 12px;
-    color: var(--csfloat-text-muted);
+    font-weight: 500;
+    color: rgb(158, 167, 177);
     margin-bottom: 8px;
 }
 
