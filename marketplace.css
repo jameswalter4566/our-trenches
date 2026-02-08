@@ -46,6 +46,11 @@
     font-size: 16px;
     font-weight: 400;
     line-height: normal;
+    zoom: 1 !important; /* Override the 0.65 zoom from style.css */
+}
+
+.marketplace-page .main-nav {
+    zoom: 1 !important; /* Keep nav at normal size too */
 }
 
 /* Navigation uses site default styles from style.css */
@@ -53,7 +58,7 @@
 /* ===== CATEGORY BAR ===== */
 .category-bar {
     position: fixed;
-    top: 93px; /* Below original nav (64px * 1.45 zoom) */
+    top: 64px; /* Below nav (no zoom adjustment needed now) */
     left: 0;
     right: 0;
     z-index: 199;
@@ -99,8 +104,8 @@
 
 /* ===== MAIN LAYOUT ===== */
 .marketplace-wrapper {
-    padding-top: 146px; /* 93px nav + 38px category + 15px gap */
-    min-height: calc(100vh - 146px);
+    padding-top: 120px; /* 64px nav + 38px category + 18px gap */
+    min-height: calc(100vh - 120px);
 }
 
 .marketplace-layout {
@@ -113,8 +118,8 @@
     width: 350px;
     flex-shrink: 0;
     position: sticky;
-    top: 146px;
-    max-height: calc(100vh - 160px);
+    top: 120px;
+    max-height: calc(100vh - 140px);
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
