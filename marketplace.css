@@ -164,11 +164,11 @@
 }
 
 .filter-search-icon {
-    color: var(--csfloat-text-muted);
+    color: rgb(255, 255, 255);
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    margin: 0 8px 0 -4px;
 }
 
 .filter-search input {
@@ -190,26 +190,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    color: var(--csfloat-text-dim);
+    width: 20px;
+    height: 20px;
+    background: rgba(193, 206, 255, 0.04);
+    border: 0.666667px solid rgba(158, 167, 177, 0.15);
+    border-radius: 6px;
+    color: rgb(158, 167, 177);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     margin-left: 8px;
 }
 
 /* ===== FILTER SECTIONS - Exact CSFloat ===== */
 .filter-section {
     border-bottom: none;
-    margin-bottom: 8px;
+    margin-bottom: 0;
 }
 
 .filter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 310px;
+    height: 15px;
     padding: 6px 0;
     cursor: pointer;
 }
@@ -219,7 +222,7 @@
     font-size: 12px;
     font-weight: 700;
     text-transform: capitalize;
-    color: var(--csfloat-text-white);
+    color: rgb(255, 255, 255);
     letter-spacing: 0;
     margin: 0;
 }
@@ -227,12 +230,12 @@
 .filter-toggle {
     width: 18px;
     height: 18px;
-    color: var(--csfloat-text-muted);
+    color: rgb(158, 167, 177);
     transition: transform 0.2s;
 }
 
 .filter-section.collapsed .filter-toggle {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
 }
 
 .filter-content {
@@ -314,10 +317,10 @@
 .price-input-wrapper {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 150px;
     height: 36px;
-    padding: 0 12px;
-    background: var(--csfloat-input-bg);
+    padding: 0 10px;
+    background: rgba(193, 206, 255, 0.04);
     border: none;
     border-radius: 6px;
     box-sizing: border-box;
@@ -351,7 +354,7 @@
     outline-offset: -2px;
 }
 
-/* Price Quick Filters - Exact CSFloat pill buttons */
+/* Price Quick Filters - Exact CSFloat bubble buttons */
 .price-quick-filters {
     display: flex;
     flex-wrap: wrap;
@@ -359,22 +362,22 @@
 }
 
 .price-quick-btn {
-    height: 28px;
-    padding: 0 12px;
-    background: transparent;
-    border: 1px solid var(--csfloat-border);
-    border-radius: 14px;
-    color: var(--csfloat-text-muted);
+    padding: 5px;
+    background: rgba(193, 206, 255, 0.04);
+    border: 0.666667px solid transparent;
+    border-radius: 12px;
+    color: rgb(158, 167, 177);
     font-family: inherit;
     font-size: 12px;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.15s;
     white-space: nowrap;
 }
 
 .price-quick-btn:hover {
-    border-color: var(--csfloat-text-muted);
-    color: var(--csfloat-text-white);
+    border-color: rgb(158, 167, 177);
+    color: rgb(255, 255, 255);
 }
 
 .price-quick-btn.active {
@@ -443,13 +446,13 @@
 }
 
 .wear-input {
-    width: 100%;
+    width: 150px;
     height: 36px;
-    padding: 0 12px;
-    background: var(--csfloat-input-bg);
+    padding: 0 10px;
+    background: rgba(193, 206, 255, 0.04);
     border: none;
     border-radius: 6px;
-    color: var(--csfloat-text-white);
+    color: rgb(255, 255, 255);
     font-family: inherit;
     font-size: 16px;
     outline: none;
@@ -461,7 +464,7 @@
     outline-offset: -2px;
 }
 
-/* Wear Toggle Buttons (FN, MW, FT, WW, BS) */
+/* Wear Toggle Buttons (FN, MW, FT, WW, BS) - Exact CSFloat bubble */
 .wear-toggles {
     display: flex;
     gap: 8px;
@@ -469,22 +472,21 @@
 }
 
 .wear-toggle-btn {
-    height: 28px;
-    padding: 0 14px;
-    background: transparent;
-    border: 1px solid var(--csfloat-border);
-    border-radius: 14px;
-    color: var(--csfloat-text-muted);
+    padding: 5px;
+    background: rgba(193, 206, 255, 0.04);
+    border: 0.666667px solid transparent;
+    border-radius: 12px;
+    color: rgb(158, 167, 177);
     font-family: inherit;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.15s;
 }
 
 .wear-toggle-btn:hover {
-    border-color: var(--csfloat-text-muted);
-    color: var(--csfloat-text-white);
+    border-color: rgb(158, 167, 177);
+    color: rgb(255, 255, 255);
 }
 
 .wear-toggle-btn.active {
@@ -562,15 +564,17 @@
 
 /* ===== SPECIAL SECTION - Exact CSFloat ===== */
 .special-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 310px;
 }
 
 .special-checkbox {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 155px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -578,8 +582,8 @@
     width: 18px;
     height: 18px;
     appearance: none;
-    border: 2px solid var(--csfloat-border);
-    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
     background: transparent;
     cursor: pointer;
     position: relative;
@@ -605,15 +609,23 @@
 
 .special-label {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    color: rgb(255, 255, 255);
 }
 
 .special-label.stattrak {
-    color: var(--csfloat-orange);
+    color: rgb(255, 120, 44);
+    font-weight: 500;
 }
 
 .special-label.souvenir {
-    color: var(--csfloat-gold);
+    color: oklch(0.88 0.161 109.3);
+    font-weight: 500;
+}
+
+.special-label.highlight {
+    color: rgb(255, 215, 170);
+    font-weight: 500;
 }
 
 .special-checkbox:hover .special-label {
